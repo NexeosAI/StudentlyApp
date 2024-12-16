@@ -174,19 +174,14 @@ export function ContentGenerator() {
         <div className="rounded-lg border bg-card p-4">
           <ReactMarkdown
             components={{
-              code({ node, inline, className, children, ...props }: {
-                node: any;
-                inline?: boolean;
-                className?: string;
-                children: React.ReactNode;
-              }) {
+              code: ({ className, children, ...props }) => {
                 const match = /language-(\w+)/.exec(className || '')
-                return !inline && match ? (
+                return match ? (
                   <CodeBlock language={match[1]} {...props}>
                     {String(children).replace(/\n$/, '')}
                   </CodeBlock>
                 ) : (
-                  <code {...props} className={className}>
+                  <code className={className} {...props}>
                     {children}
                   </code>
                 )
