@@ -99,7 +99,12 @@ export function Chat() {
             >
               <ReactMarkdown
                 components={{
-                  code({ node, inline, className, children, ...props }) {
+                  code({ node, inline, className, children, ...props }: {
+                    node: any;
+                    inline?: boolean;
+                    className?: string;
+                    children: React.ReactNode;
+                  }) {
                     const match = /language-(\w+)/.exec(className || '')
                     return !inline && match ? (
                       <CodeBlock language={match[1]} {...props}>
