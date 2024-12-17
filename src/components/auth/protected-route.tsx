@@ -1,25 +1,21 @@
-import { Navigate, useLocation, Outlet } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
+import { useAuth } from '@/lib/store/auth-store'
+import { logger } from '@/lib/utils/logger'
 
 interface ProtectedRouteProps {
-  isAuthenticated: boolean
-  isAuthorized?: boolean
-  redirectTo?: string
+  children: React.ReactElement
 }
 
-export function ProtectedRoute({ 
-  isAuthenticated, 
-  isAuthorized = true, 
-  redirectTo = '/auth/login' 
-}: ProtectedRouteProps) {
+export function ProtectedRoute({ children }: ProtectedRouteProps) {
+  const { isAuthenticated } = useAuth()
   const location = useLocation()
 
+  logger.debug('Protected route check', { isAuthenticated, pathname: location.pathname })
+
   if (!isAuthenticated) {
+    logger.info('Unauthorized access attempt', { pathname: location.pathname })
     return <Navigate to="/auth/login" state={{ from: location }} replace />
   }
 
-  if (!isAuthorized) {
-    return <Navigate to={redirectTo} replace />
-  }
-
-  return <Outlet />
+  return children
 }

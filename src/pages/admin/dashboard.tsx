@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Overview } from '@/components/admin/dashboard/overview'
 import { RecentSales } from '@/components/admin/dashboard/recent-sales'
 import { Search } from '@/components/admin/dashboard/search'
+import { AIProviders } from '@/components/ai/ai-providers'
 
 export default function AdminDashboard() {
   return (
@@ -15,6 +16,7 @@ export default function AdminDashboard() {
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="reports">Reports</TabsTrigger>
+          <TabsTrigger value="ai">AI Settings</TabsTrigger>
         </TabsList>
         <TabsContent value="overview" className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -101,6 +103,21 @@ export default function AdminDashboard() {
               </CardHeader>
               <CardContent className="pl-2">
                 <Search />
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+        <TabsContent value="ai" className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+            <Card className="col-span-4">
+              <CardHeader>
+                <CardTitle>AI Configuration</CardTitle>
+                <CardDescription>
+                  Configure your AI providers and model settings
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <AIProviders />
               </CardContent>
             </Card>
           </div>

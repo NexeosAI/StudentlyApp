@@ -14,8 +14,11 @@ export function AdminSidebar({ open, onClose }: AdminSidebarProps) {
   return (
     <>
       {/* Desktop sidebar */}
-      <nav className="hidden border-r bg-background lg:block lg:w-64">
-        <ScrollArea className="h-[calc(100vh-4rem)] px-3 py-2">
+      <nav className={cn(
+        "fixed top-16 left-0 h-[calc(100vh-4rem)] border-r bg-background transition-all duration-300",
+        open ? "w-64" : "w-16"
+      )}>
+        <ScrollArea className="h-full px-3 py-2">
           <div className="space-y-4">
             {adminNavItems.map((section) => (
               <div key={section.title}>

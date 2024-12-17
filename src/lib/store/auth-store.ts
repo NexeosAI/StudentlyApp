@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { logger } from '../utils/logger'
 
 interface User {
   id: string
@@ -15,6 +16,7 @@ interface AuthState {
   isAdmin: boolean
   setAuth: (user: User, token: string) => void
   clearAuth: () => void
+  mockLogin: (email: string) => Promise<{ user: User; token: string }>
 }
 
 export const useAuth = create<AuthState>()(
@@ -24,44 +26,53 @@ export const useAuth = create<AuthState>()(
       token: null,
       isAuthenticated: false,
       isAdmin: false,
-      setAuth: (user: User, token: string) =>
+      setAuth: (user: User, token: string) => {
+        logger.info('Setting auth state', { user: { ...user, password: undefined }, token: '***' })
         set({ 
           user, 
           token, 
           isAuthenticated: true,
           isAdmin: user.role === 'admin'
-        }),
-      clearAuth: () => 
+        })
+      },
+      clearAuth: () => {
+        logger.info('Clearing auth state')
         set({ 
           user: null, 
           token: null, 
           isAuthenticated: false,
           isAdmin: false
-        }),
+        })
+      },
+      mockLogin: async (email: string) => {
+        // For development only - mock a successful login
+        const mockUser: User = {
+          id: '1',
+          email,
+          name: 'Admin User',
+          role: 'admin'
+        }
+        const mockToken = 'mock-jwt-token'
+        
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500))
+        
+        // Set the auth state
+        set({
+          user: mockUser,
+          token: mockToken,
+          isAuthenticated: true,
+          isAdmin: true
+        })
+        
+        return { user: mockUser, token: mockToken }
+      }
     }),
     {
       name: 'auth-storage',
+      onRehydrateStorage: () => {
+        logger.info('Rehydrating auth state')
+      }
     }
   )
 )
-
-// Mock login function for development
-export function mockLogin(email: string, password: string) {
-  return new Promise<void>((resolve, reject) => {
-    setTimeout(() => {
-      if (email.toLowerCase() === 'dave@studently.uk' && password === 'password123') {
-        const user: User = {
-          id: '1',
-          email: email.toLowerCase(),
-          name: 'Dave',
-          role: 'admin' as const
-        }
-        const token = 'mock-jwt-token'
-        useAuth.getState().setAuth(user, token)
-        resolve()
-      } else {
-        reject(new Error('Invalid credentials'))
-      }
-    }, 1000)
-  })
-}

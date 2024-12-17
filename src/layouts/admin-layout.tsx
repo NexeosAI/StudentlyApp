@@ -10,17 +10,14 @@ export function AdminLayout() {
   return (
     <div className="min-h-screen bg-background">
       <AdminHeader onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
+      <AdminSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
-      <div className="flex h-[calc(100vh-4rem)]">
-        <AdminSidebar open={sidebarOpen} />
-        
-        <main className={cn(
-          "flex-1 overflow-y-auto p-6 transition-all duration-300",
-          sidebarOpen ? "ml-64" : "ml-16"
-        )}>
-          <Outlet />
-        </main>
-      </div>
+      <main className={cn(
+        "min-h-[calc(100vh-4rem)] p-6 transition-all duration-300",
+        sidebarOpen ? "ml-64" : "ml-16"
+      )}>
+        <Outlet />
+      </main>
     </div>
   )
 }

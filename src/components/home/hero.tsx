@@ -2,7 +2,7 @@ import { useTranslation } from '@/lib/hooks/use-translation'
 import { Button } from '../ui/button'
 
 export function Hero() {
-  const t = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8">

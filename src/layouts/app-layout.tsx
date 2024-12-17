@@ -1,15 +1,14 @@
-import React from 'react';
 import { ThemeSwitcher } from '@/components/theme/theme-switcher';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/store/auth-store';
 import { LocaleSwitcher } from '@/components/locale/locale-switcher';
 import { GraduationCap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useSidebar } from '@/lib/store/sidebar-store';
 import { Sidebar } from '@/components/layout/sidebar';
 import { cn } from '@/lib/utils';
 
-export function AppLayout({ children }: { children: React.ReactNode }) {
+export function AppLayout() {
   const clearAuth = useAuth((state) => state.clearAuth);
   const { collapsed } = useSidebar();
 
@@ -33,8 +32,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
       <div className="flex min-h-[calc(100vh-4rem)]">
         <Sidebar className={cn("h-[calc(100vh-4rem)] border-r border-background", collapsed ? "w-[80px]" : "w-64")} />
-        <main className="flex-1 overflow-y-auto">
-          {children}
+        <main className="flex-1 overflow-y-auto p-6">
+          <Outlet />
         </main>
       </div>
     </div>

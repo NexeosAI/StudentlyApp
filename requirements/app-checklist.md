@@ -236,6 +236,13 @@
   - [ ] Performance Comparator
   - [ ] Study Efficiency Analyzer
 
+## User Preferences & Personalization
+- [ ] Writing Style & Tone Settings:
+  - [ ] Onboarding flow for capturing initial style preferences
+  - [ ] Dashboard card for updating style & tone
+  - [ ] JSON storage of user preferences
+  - [ ] Integration with AI writing tools
+
 ## Database & Storage
 *Reference: database.md, storage-media.md*
 

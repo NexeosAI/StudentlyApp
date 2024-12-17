@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { mockLogin } from '@/lib/store/auth-store'
+import { useAuth } from '@/lib/store/auth-store'
+import { logger } from '@/lib/utils/logger'
 
 const loginSchema = z.object({
   email: z.string().email('Please enter a valid email'),
@@ -19,6 +20,10 @@ type LoginInput = z.infer<typeof loginSchema>
 export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
+  const { mockLogin } = useAuth()
+
+  const from = location.state?.from?.pathname || '/dashboard'
 
   const {
     register,
@@ -26,15 +31,25 @@ export function LoginForm() {
     formState: { errors },
   } = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: import.meta.env.DEV ? 'admin@example.com' : '',
+      password: import.meta.env.DEV ? 'admin123' : '',
+    }
   })
 
   const onSubmit = async (data: LoginInput) => {
     try {
       setIsLoading(true)
-      await mockLogin(data.email, data.password)
+      logger.info('Attempting login', { email: data.email })
+      
+      // In development, we ignore the password
+      await mockLogin(data.email)
+      
+      logger.info('Login successful, redirecting', { from })
       toast.success('Logged in successfully')
-      navigate('/dashboard')
+      navigate(from, { replace: true })
     } catch (error) {
+      logger.error('Login failed', { error })
       toast.error('Invalid email or password')
     } finally {
       setIsLoading(false)
@@ -45,33 +60,47 @@ export function LoginForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="space-y-2">
         <Input
-          {...register('email')}
+          id="email"
+          placeholder="name@example.com"
           type="email"
-          placeholder="Email"
+          autoCapitalize="none"
+          autoComplete="email"
+          autoCorrect="off"
           disabled={isLoading}
+          {...register('email')}
         />
-        {errors.email && (
-          <p className="text-sm text-red-500">{errors.email.message}</p>
+        {errors?.email && (
+          <p className="text-sm text-red-500">
+            {errors.email.message}
+          </p>
         )}
       </div>
       <div className="space-y-2">
         <Input
-          {...register('password')}
+          id="password"
+          placeholder="••••••••"
           type="password"
-          placeholder="Password"
+          autoComplete="current-password"
           disabled={isLoading}
+          {...register('password')}
         />
-        {errors.password && (
-          <p className="text-sm text-red-500">{errors.password.message}</p>
+        {errors?.password && (
+          <p className="text-sm text-red-500">
+            {errors.password.message}
+          </p>
         )}
       </div>
-      <Button
-        type="submit"
-        className="w-full"
-        disabled={isLoading}
-      >
-        {isLoading ? 'Signing in...' : 'Sign in'}
+      <Button className="w-full" type="submit" disabled={isLoading}>
+        {isLoading && (
+          <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-foreground" />
+        )}
+        Sign In
       </Button>
+      {import.meta.env.DEV && (
+        <p className="text-xs text-muted-foreground text-center mt-2">
+          Development mode: Any email will work
+        </p>
+      )}
     </form>
   )
 }

@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -30,144 +30,124 @@ const tools = [
   {
     title: 'Research Helper',
     href: '/dashboard/tools/research',
-    icon: BookOpen,
+    icon: Search,
   },
   {
-    title: 'AI Chat',
-    href: '/dashboard/tools/chat',
-    icon: BrainCircuit,
-  },
-  {
-    title: 'AI Tools',
-    items: [
-      {
-        title: 'Math Solver',
-        href: '/dashboard/tools/math-solver',
-        icon: Calculator,
-        color: 'text-blue-500',
-        subscription: 'basic'
-      },
-      {
-        title: 'Plagiarism Detector',
-        href: '/dashboard/tools/plagiarism-detector',
-        icon: Search,
-        color: 'text-red-500',
-        subscription: 'pro'
-      },
-      {
-        title: 'Data Visualizer',
-        href: '/dashboard/tools/data-visualizer',
-        icon: BarChart,
-        color: 'text-green-500',
-        subscription: 'pro'
-      },
-      {
-        title: 'Statistical Assistant',
-        href: '/dashboard/tools/statistical-assistant',
-        icon: LineChart,
-        color: 'text-purple-500',
-        subscription: 'pro'
-      },
-      {
-        title: 'Digital Library',
-        href: '/dashboard/tools/digital-library',
-        icon: Library,
-        color: 'text-orange-500',
-        subscription: 'enterprise'
-      },
-      {
-        title: 'Data Collection',
-        href: '/dashboard/tools/data-collector',
-        icon: ClipboardList,
-        color: 'text-teal-500',
-        subscription: 'enterprise'
-      }
-    ]
+    title: 'Calculator',
+    href: '/dashboard/tools/calculator',
+    icon: Calculator,
   },
 ]
 
-const bottomNav = [
+const analysis = [
+  {
+    title: 'Study Analysis',
+    href: '/dashboard/analysis/study',
+    icon: BarChart,
+  },
+  {
+    title: 'Progress Tracking',
+    href: '/dashboard/analysis/progress',
+    icon: LineChart,
+  },
+]
+
+const resources = [
+  {
+    title: 'Library',
+    href: '/dashboard/resources/library',
+    icon: Library,
+  },
+  {
+    title: 'Study Materials',
+    href: '/dashboard/resources/materials',
+    icon: BookOpen,
+  },
+  {
+    title: 'Exam Prep',
+    href: '/dashboard/resources/exam-prep',
+    icon: ClipboardList,
+  },
+]
+
+const support = [
+  {
+    title: 'AI Assistant',
+    href: '/dashboard/support/ai',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Help Center',
+    href: '/dashboard/support/help',
+    icon: HelpCircle,
+  },
   {
     title: 'Settings',
     href: '/dashboard/settings',
     icon: Settings,
   },
-  {
-    title: 'Help',
-    href: '/dashboard/help',
-    icon: HelpCircle,
-  },
 ]
 
-export function DashboardNav() {
-  const location = useLocation()
+interface DashboardNavProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+export function DashboardNav({ className, ...props }: DashboardNavProps) {
   return (
-    <div className="flex h-full w-full flex-col gap-2">
-      <div className="flex h-14 items-center border-b px-4">
-        <Link to="/dashboard" className="flex items-center gap-2 font-semibold">
-          <span className="text-xl">StudentlyAI</span>
-        </Link>
-      </div>
-
-      <div className="flex-1 space-y-4 px-2">
-        {tools.map((tool) => (
-          <div key={tool.title} className="space-y-1">
-            <h2 className="px-4 text-lg font-semibold tracking-tight">{tool.title}</h2>
-            {tool.items ? (
-              <nav className="grid gap-1">
-                {tool.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className={cn(
-                      'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground',
-                      location.pathname === item.href ? 'bg-accent' : 'transparent'
-                    )}
-                  >
-                    <item.icon className="h-4 w-4" />
-                    <span className={item.color}>{item.title}</span>
-                    {item.subscription && (
-                      <span className="text-xs text-gray-500"> ({item.subscription})</span>
-                    )}
-                  </Link>
-                ))}
-              </nav>
-            ) : (
-              <nav className="grid gap-1">
-                <Link
-                  to={tool.href}
-                  className={cn(
-                    'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground',
-                    location.pathname === tool.href ? 'bg-accent' : 'transparent'
-                  )}
-                >
-                  <tool.icon className="h-4 w-4" />
-                  {tool.title}
-                </Link>
-              </nav>
-            )}
-          </div>
+    <nav
+      className={cn("flex flex-col space-y-6 p-6", className)}
+      {...props}
+    >
+      <div className="space-y-1">
+        <h4 className="px-2 py-1 text-sm font-semibold">Tools</h4>
+        {tools.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex items-center gap-3 rounded-lg px-2 py-1 text-sm hover:bg-accent"
+          >
+            <item.icon className="h-4 w-4" />
+            {item.title}
+          </Link>
         ))}
       </div>
-
-      <div className="mt-auto border-t">
-        <nav className="grid gap-1 p-2">
-          {bottomNav.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className={cn(
-                'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground',
-                location.pathname === item.href ? 'bg-accent' : 'transparent'
-              )}
-            >
-              <item.icon className="h-4 w-4" />
-              {item.title}
-            </Link>
-          ))}
-        </nav>
+      <div className="space-y-1">
+        <h4 className="px-2 py-1 text-sm font-semibold">Analysis</h4>
+        {analysis.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex items-center gap-3 rounded-lg px-2 py-1 text-sm hover:bg-accent"
+          >
+            <item.icon className="h-4 w-4" />
+            {item.title}
+          </Link>
+        ))}
       </div>
-    </div>
+      <div className="space-y-1">
+        <h4 className="px-2 py-1 text-sm font-semibold">Resources</h4>
+        {resources.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex items-center gap-3 rounded-lg px-2 py-1 text-sm hover:bg-accent"
+          >
+            <item.icon className="h-4 w-4" />
+            {item.title}
+          </Link>
+        ))}
+      </div>
+      <div className="space-y-1">
+        <h4 className="px-2 py-1 text-sm font-semibold">Support</h4>
+        {support.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex items-center gap-3 rounded-lg px-2 py-1 text-sm hover:bg-accent"
+          >
+            <item.icon className="h-4 w-4" />
+            {item.title}
+          </Link>
+        ))}
+      </div>
+    </nav>
   )
 }
