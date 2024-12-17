@@ -1,11 +1,13 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import { ThemeProvider } from './components/theme/theme-provider'
+import { ErrorBoundary } from './components/error-boundary'
 import { ProtectedRoute } from './components/auth/protected-route'
 import { useAuth } from './lib/store/auth-store'
-import { Toaster } from 'sonner'
+import { Toaster } from './components/ui/toaster'
 import { MarketingLayout } from './layouts/marketing-layout'
 import { AppLayout } from './layouts/app-layout'
 import { Suspense, lazy } from 'react'
+import './styles/katex.css'
 
 // Lazy load pages
 const HomePage = lazy(() => import('./pages/home'))
@@ -18,7 +20,15 @@ const ContactPage = lazy(() => import('./pages/contact'))
 const LoginPage = lazy(() => import('./pages/auth/login'))
 const RegisterPage = lazy(() => import('./pages/auth/register'))
 const DashboardPage = lazy(() => import('./pages/dashboard'))
-const AITools = lazy(() => import('./pages/ai'))
+const AdminDashboardPage = lazy(() => import('./pages/admin/dashboard'))
+
+// AI Tools Pages
+const MathSolverPage = lazy(() => import('./pages/tools/math-solver'))
+const PlagiarismDetectorPage = lazy(() => import('./pages/tools/plagiarism-detector'))
+const DataVisualizerPage = lazy(() => import('./pages/tools/data-visualizer'))
+const StatisticalAssistantPage = lazy(() => import('./pages/tools/statistical-assistant'))
+const DigitalLibraryPage = lazy(() => import('./pages/tools/digital-library'))
+const DataCollectorPage = lazy(() => import('./pages/tools/data-collector'))
 
 // Loading component
 const PageLoader = () => (
@@ -28,74 +38,63 @@ const PageLoader = () => (
 )
 
 function App() {
-  const isAuthenticated = useAuth((state) => state.isAuthenticated)
+  const { isAuthenticated, isAdmin } = useAuth()
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="studently-theme">
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          {/* Marketing/Public Routes */}
-          <Route path="/" element={<MarketingLayout><HomePage /></MarketingLayout>} />
-          <Route path="/features" element={<MarketingLayout><FeaturesPage /></MarketingLayout>} />
-          <Route path="/pricing" element={<MarketingLayout><PricingPage /></MarketingLayout>} />
-          <Route path="/about" element={<MarketingLayout><AboutPage /></MarketingLayout>} />
-          <Route path="/blog" element={<MarketingLayout><BlogPage /></MarketingLayout>} />
-          <Route path="/resources" element={<MarketingLayout><ResourcesPage /></MarketingLayout>} />
-          <Route path="/contact" element={<MarketingLayout><ContactPage /></MarketingLayout>} />
+      <ErrorBoundary>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* Marketing routes */}
+            <Route element={<MarketingLayout><Outlet /></MarketingLayout>}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Route>
 
-          {/* Auth Routes */}
-          <Route
-            path="/auth/login"
-            element={
-              isAuthenticated ? (
-                <Navigate to="/dashboard" replace />
-              ) : (
-                <MarketingLayout>
-                  <LoginPage />
-                </MarketingLayout>
-              )
-            }
-          />
-          <Route
-            path="/auth/register"
-            element={
-              isAuthenticated ? (
-                <Navigate to="/dashboard" replace />
-              ) : (
-                <MarketingLayout>
-                  <RegisterPage />
-                </MarketingLayout>
-              )
-            }
-          />
+            {/* Auth routes */}
+            <Route path="/auth/login" element={<LoginPage />} />
+            <Route path="/auth/register" element={<RegisterPage />} />
 
-          {/* Protected App Routes */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <AppLayout>
-                  <DashboardPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/ai/*"
-            element={
-              <ProtectedRoute>
-                <AppLayout>
-                  <AITools />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
+            {/* Protected app routes */}
+            <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+              <Route element={<AppLayout><Outlet /></AppLayout>}>
+                <Route path="/dashboard" element={<DashboardPage />} />
+                {/* AI Tools Routes */}
+                <Route path="/tools">
+                  <Route path="math-solver" element={<MathSolverPage />} />
+                  <Route path="plagiarism-detector" element={<PlagiarismDetectorPage />} />
+                  <Route path="data-visualizer" element={<DataVisualizerPage />} />
+                  <Route path="statistical-assistant" element={<StatisticalAssistantPage />} />
+                  <Route path="digital-library" element={<DigitalLibraryPage />} />
+                  <Route path="data-collector" element={<DataCollectorPage />} />
+                </Route>
+              </Route>
+            </Route>
 
-          {/* Catch all route */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Suspense>
-      <Toaster position="top-right" />
+            {/* Protected admin routes */}
+            <Route 
+              element={
+                <ProtectedRoute 
+                  isAuthenticated={isAuthenticated} 
+                  isAuthorized={isAdmin} 
+                  redirectTo="/dashboard"
+                />
+              }
+            >
+              <Route path="/admin/*" element={<AdminDashboardPage />} />
+            </Route>
+
+            {/* Catch-all route */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+          <Toaster />
+        </Suspense>
+      </ErrorBoundary>
     </ThemeProvider>
   )
 }

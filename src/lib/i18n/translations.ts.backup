@@ -1,0 +1,5548 @@
+type Translations = {
+  [key: string]: {
+    common: {
+      navigation: {
+        features: string
+        pricing: string
+        about: string
+        blog: string
+        resources: string
+        contact: string
+        login: string
+        signup: string
+        dashboard: string
+      }
+      footer: {
+        product: string
+        company: string
+        resources: string
+        legal: string
+        privacy: string
+        terms: string
+      }
+    }
+    home: {
+      hero: {
+        title: string
+        subtitle: string
+        cta: string
+      }
+      features: {
+        title: string
+        items: Array<{
+          title: string
+          description: string
+        }>
+      }
+    }
+    pricing: {
+      title: string
+      description: string
+      monthly: string
+      yearly: string
+      save20: string
+      mostPopular: string
+      getStarted: string
+      choosePlan: string
+      pricingDescription: string
+      plans: {
+        basic: {
+          name: string
+          description: string
+          features: string[]
+        }
+        pro: {
+          name: string
+          description: string
+          features: string[]
+        }
+      }
+      faq: {
+        title: string
+        items: Array<{
+          question: string
+          answer: string
+        }>
+      }
+    }
+    features: {
+      title: string
+      description: string
+      sections: Array<{
+        title: string
+        description: string
+        items: Array<{
+          title: string
+          description: string
+        }>
+      }>
+    }
+  }
+}
+
+export const translations: Translations = {
+  'en-GB': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'What payment methods do you accept?',
+            answer: 'We accept all major credit cards, PayPal, and bank transfers.'
+          },
+          {
+            question: 'Can I change my plan later?',
+            answer: 'Yes, you can upgrade or downgrade your plan at any time.'
+          },
+          {
+            question: 'Is there a free trial?',
+            answer: 'Yes, all plans come with a 14-day free trial.'
+          },
+          {
+            question: 'What happens after my trial ends?',
+            answer: "After your trial ends, you'll be automatically switched to your chosen plan. You can cancel anytime before the trial ends."
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'fr-FR': {
+    common: {
+      navigation: {
+        features: 'Fonctionnalités',
+        pricing: 'Tarifs',
+        about: 'À propos',
+        blog: 'Blog',
+        resources: 'Ressources',
+        contact: 'Contact',
+        login: 'Connexion',
+        signup: "S'inscrire",
+        dashboard: 'Tableau de bord'
+      },
+      footer: {
+        product: 'Produit',
+        company: 'Entreprise',
+        resources: 'Ressources',
+        legal: 'Mentions légales',
+        privacy: 'Confidentialité',
+        terms: "Conditions d'utilisation"
+      }
+    },
+    home: {
+      hero: {
+        title: "Transformez votre expérience d'apprentissage",
+        subtitle: 'La plateforme intelligente de gestion étudiante qui vous aide à atteindre vos objectifs académiques',
+        cta: 'Commencer',
+      },
+      features: {
+        title: 'Fonctionnalités',
+        items: [
+          {
+            title: 'Apprentissage assisté par IA',
+            description: "Parcours d'apprentissage personnalisés et recommandations intelligentes pour optimiser vos études.",
+          },
+          {
+            title: "Outils d'étude",
+            description: 'Créez des notes de révision, des cartes mémoire et des tests pratiques avec assistance IA.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Prix simples et transparents',
+      description: 'Choisissez le forfait qui vous convient le mieux',
+      monthly: 'Mensuel',
+      yearly: 'Annuel',
+      save20: 'Économisez 20%',
+      mostPopular: 'Plus populaire',
+      getStarted: 'Commencer',
+      choosePlan: 'Choisissez votre forfait',
+      pricingDescription: 'Tous les forfaits incluent les fonctionnalités de base et des mises à jour régulières',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Parfait pour les étudiants individuels',
+          features: [
+            "Recommandations d'étude par IA",
+            'Outils de prise de notes de base',
+            'Création de cartes mémoire',
+            'Tests pratiques limités'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Idéal pour les étudiants sérieux',
+          features: [
+            'Tout ce qui est inclus dans Basic',
+            "Planification d'études avancée par IA",
+            'Tests pratiques illimités',
+            'Analyses de progression',
+            "Collaboration de groupe d'étude"
+          ]
+        }
+      },
+      faq: {
+        title: 'Questions fréquentes',
+        items: [
+          {
+            question: 'Puis-je changer de forfait à tout moment ?',
+            answer: 'Oui, vous pouvez surclasser, rétrograder ou annuler votre forfait à tout moment. Les changements prennent effet au début du prochain cycle de facturation.'
+          },
+          {
+            question: 'Y a-t-il une réduction étudiante ?',
+            answer: 'Oui ! Les étudiants avec une adresse email .edu valide bénéficient de 20% de réduction sur tous les forfaits payants.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: "Fonctionnalités puissantes pour un meilleur apprentissage",
+      description: 'Tout ce dont vous avez besoin pour réussir vos études',
+      sections: [
+        {
+          title: 'Apprentissage assisté par IA',
+          description: "Laissez l'IA vous aider à apprendre plus efficacement",
+          items: [
+            {
+              title: "Plans d'étude intelligents",
+              description: "Programmes personnalisés basés sur vos objectifs et votre style d'apprentissage"
+            },
+            {
+              title: 'Apprentissage adaptatif',
+              description: "Contenu qui s'adapte à votre progression et votre compréhension"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-US': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalized learning paths and smart recommendations to optimize your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create review notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'What payment methods do you accept?',
+            answer: 'We accept all major credit cards, PayPal, and bank transfers.'
+          },
+          {
+            question: 'Can I change my plan later?',
+            answer: 'Yes, you can upgrade or downgrade your plan at any time.'
+          },
+          {
+            question: 'Is there a free trial?',
+            answer: 'Yes, all plans come with a 14-day free trial.'
+          },
+          {
+            question: 'What happens after my trial ends?',
+            answer: "After your trial ends, you'll be automatically switched to your chosen plan. You can cancel anytime before the trial ends."
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalized study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-CA': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalized learning paths and smart recommendations to optimize your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create review notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalized study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-AU': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-NZ': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IE': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-ZA': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'de-DE': {
+    common: {
+      navigation: {
+        features: 'Funktionen',
+        pricing: 'Preise',
+        about: 'Über uns',
+        blog: 'Blog',
+        resources: 'Ressourcen',
+        contact: 'Kontakt',
+        login: 'Anmelden',
+        signup: 'Registrieren',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Produkt',
+        company: 'Unternehmen',
+        resources: 'Ressourcen',
+        legal: 'Rechtliches',
+        privacy: 'Datenschutz',
+        terms: 'AGB'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transformiere dein Lernerlebnis',
+        subtitle: 'Die intelligente Studentenmanagement-Plattform, die dir hilft, deine akademischen Ziele zu erreichen',
+        cta: 'Jetzt starten',
+      },
+      features: {
+        title: 'Funktionen',
+        items: [
+          {
+            title: 'KI-gestütztes Lernen',
+            description: 'Personalisierte Lernpfade und intelligente Empfehlungen zur Optimierung deines Studiums.',
+          },
+          {
+            title: 'Lernwerkzeuge',
+            description: 'Erstelle Notizen, Karteikarten und Übungstests mit KI-Unterstützung.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Einfache, transparente Preise',
+      description: 'Wähle den Plan, der am besten zu dir passt',
+      monthly: 'Monatlich',
+      yearly: 'Jährlich',
+      save20: '20% sparen',
+      mostPopular: 'Beliebteste Wahl',
+      getStarted: 'Jetzt starten',
+      choosePlan: 'Wähle deinen Plan',
+      pricingDescription: 'Alle Pläne enthalten Kernfunktionen und regelmäßige Updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfekt für einzelne Studenten',
+          features: [
+            'KI-gestützte Lernempfehlungen',
+            'Grundlegende Notizwerkzeuge',
+            'Karteikartenerstellung',
+            'Begrenzte Übungstests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Ideal für engagierte Studenten',
+          features: [
+            'Alles aus Basic',
+            'Erweiterte KI-Studienplanung',
+            'Unbegrenzte Übungstests',
+            'Fortschrittsanalysen',
+            'Lerngruppen-Zusammenarbeit'
+          ]
+        }
+      },
+      faq: {
+        title: 'Häufig gestellte Fragen',
+        items: [
+          {
+            question: 'Kann ich jederzeit den Plan wechseln?',
+            answer: 'Ja, du kannst deinen Plan jederzeit upgraden, downgraden oder kündigen. Änderungen werden zu Beginn des nächsten Abrechnungszeitraums wirksam.'
+          },
+          {
+            question: 'Gibt es einen Studentenrabatt?',
+            answer: 'Ja! Studenten mit einer gültigen .edu-E-Mail-Adresse erhalten 20% Rabatt auf jeden kostenpflichtigen Plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Leistungsstarke Funktionen für besseres Lernen',
+      description: 'Alles, was du für erfolgreiches Studieren brauchst',
+      sections: [
+        {
+          title: 'KI-gestütztes Lernen',
+          description: 'Lass die KI dir helfen, effektiver zu lernen',
+          items: [
+            {
+              title: 'Intelligente Studienpläne',
+              description: 'Personalisierte Lernpläne basierend auf deinen Zielen und deinem Lernstil'
+            },
+            {
+              title: 'Adaptives Lernen',
+              description: 'Inhalte, die sich an deinen Fortschritt und dein Verständnis anpassen'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-IN': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',
+            'Flashcard creation',
+            'Limited practice tests'
+          ]
+        },
+        pro: {
+          name: 'Pro',
+          description: 'Best for serious students',
+          features: [
+            'Everything in Basic',
+            'Advanced AI study planning',
+            'Unlimited practice tests',
+            'Progress analytics',
+            'Study group collaboration'
+          ]
+        }
+      },
+      faq: {
+        title: 'Frequently Asked Questions',
+        items: [
+          {
+            question: 'Can I switch plans at any time?',
+            answer: 'Yes, you can upgrade, downgrade, or cancel your plan at any time. Changes take effect at the start of the next billing cycle.'
+          },
+          {
+            question: 'Is there a student discount?',
+            answer: 'Yes! Students with a valid .edu email address get 20% off any paid plan.'
+          }
+        ]
+      }
+    },
+    features: {
+      title: 'Powerful Features for Better Learning',
+      description: 'Everything you need to succeed in your studies',
+      sections: [
+        {
+          title: 'AI-Powered Learning',
+          description: 'Let AI help you learn more effectively',
+          items: [
+            {
+              title: 'Smart Study Plans',
+              description: 'Personalised study schedules based on your goals and learning style'
+            },
+            {
+              title: 'Adaptive Learning',
+              description: 'Content that adjusts to your progress and understanding'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  'en-SG': {
+    common: {
+      navigation: {
+        features: 'Features',
+        pricing: 'Pricing',
+        about: 'About',
+        blog: 'Blog',
+        resources: 'Resources',
+        contact: 'Contact',
+        login: 'Log in',
+        signup: 'Sign up',
+        dashboard: 'Dashboard'
+      },
+      footer: {
+        product: 'Product',
+        company: 'Company',
+        resources: 'Resources',
+        legal: 'Legal',
+        privacy: 'Privacy',
+        terms: 'Terms'
+      }
+    },
+    home: {
+      hero: {
+        title: 'Transform Your Learning Experience',
+        subtitle: 'The intelligent student management platform that helps you achieve your academic goals',
+        cta: 'Get Started',
+      },
+      features: {
+        title: 'Features',
+        items: [
+          {
+            title: 'AI-Powered Learning',
+            description: 'Personalised learning paths and smart recommendations to optimise your studies.',
+          },
+          {
+            title: 'Study Tools',
+            description: 'Create revision notes, flashcards and practice tests with AI assistance.',
+          },
+        ],
+      },
+    },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      description: 'Choose the plan that best fits your needs',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      save20: 'Save 20%',
+      mostPopular: 'Most Popular',
+      getStarted: 'Get Started',
+      choosePlan: 'Choose Your Plan',
+      pricingDescription: 'All plans include core features and regular updates',
+      plans: {
+        basic: {
+          name: 'Basic',
+          description: 'Perfect for individual students',
+          features: [
+            'AI-powered study recommendations',
+            'Basic note-taking tools',

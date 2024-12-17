@@ -1,0 +1,45 @@
+/* KaTeX Theme Overrides */
+.katex {
+  font-size: 1.1em;
+  font-family: inherit;
+  max-width: 100%;
+}
+
+.katex-display {
+  margin: 0 !important;
+  padding: 0.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex-html {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px; /* For scrollbar */
+}
+
+.katex .katex-html {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .katex {
+  color: hsl(var(--card-foreground));
+}
+
+[data-theme="dark"] .katex .katex-html {
+  color: hsl(var(--card-foreground));
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.katex-html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.katex-html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

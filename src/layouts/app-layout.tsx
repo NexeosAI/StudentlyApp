@@ -15,7 +15,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 h-16 bg-background border-b">
+      <header className="sticky top-0 z-50 h-16 bg-background border-b border-background">
         <div className="flex h-full items-center justify-between px-4">
           <Link to="/dashboard" className="flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-primary" />
@@ -32,7 +32,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </header>
 
       <div className="flex min-h-[calc(100vh-4rem)]">
-        <Sidebar className={cn("h-[calc(100vh-4rem)] border-r", collapsed ? "w-[80px]" : "w-64")} />
+        <Sidebar className={cn("h-[calc(100vh-4rem)] border-r border-background", collapsed ? "w-[80px]" : "w-64")} />
         <main className="flex-1 overflow-y-auto">
           {children}
         </main>

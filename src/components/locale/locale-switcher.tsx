@@ -11,7 +11,7 @@ import { Globe } from 'lucide-react'
 
 export function LocaleSwitcher() {
   const { locale, setLocale } = useLocale()
-  const currentLocale = locales[locale]
+  const currentLocale = locales[locale] || locales['en-US'] // Fallback to en-US if locale not found
 
   return (
     <DropdownMenu>
@@ -24,20 +24,22 @@ export function LocaleSwitcher() {
           <span className="sr-only">Switch locale</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        {Object.values(locales).map((l) => (
-          <DropdownMenuItem
-            key={l.code}
-            onClick={() => setLocale(l.code)}
-            className="flex items-center gap-2"
-          >
-            <span>{l.flag}</span>
-            <span>{l.country}</span>
-            <span className="ml-auto text-xs text-muted-foreground">
-              {l.code}
-            </span>
-          </DropdownMenuItem>
-        ))}
+      <DropdownMenuContent align="end" className="max-h-[300px] overflow-y-auto scrollbar-custom">
+        {Object.entries(locales)
+          .sort(([, a], [, b]) => a.country.localeCompare(b.country))
+          .map(([code, l]) => (
+            <DropdownMenuItem
+              key={code}
+              onClick={() => setLocale(code)}
+              className={`flex items-center gap-2 ${code === locale ? 'bg-accent' : ''}`}
+            >
+              <span>{l.flag}</span>
+              <span>{l.country}</span>
+              <span className="ml-auto text-xs text-muted-foreground">
+                {l.code}
+              </span>
+            </DropdownMenuItem>
+          ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )
