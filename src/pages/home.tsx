@@ -16,28 +16,28 @@ export default function HomePage() {
           <div className="flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-24">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <div className="hidden sm:mb-8 sm:flex">
-                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-muted-foreground ring-1 ring-border hover:ring-foreground/20">
-                  Announcing our next round of funding.{' '}
+                <div className={cn("relative rounded-full px-3 py-1 text-sm leading-6 text-muted-foreground ring-1 ring-border hover:ring-foreground/20")}>
+                  {t('home.hero.announcement')}{' '}
                   <Link to="/blog" className="font-semibold">
-                    Learn more <span aria-hidden="true">&rarr;</span>
+                    {t('home.hero.learnMore')} <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-                Transform Your Learning with AI
+                {t('home.hero.title')}
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Your personal AI-powered learning assistant that adapts to your unique needs and helps you achieve academic excellence.
+                {t('home.hero.subtitle')}
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Button size="lg" className="gap-2" asChild>
                   <Link to="/auth/register">
-                    Get Started
+                    {t('home.hero.cta')}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/features">Features</Link>
+                  <Link to="/features">{t('common.navigation.features')}</Link>
                 </Button>
               </div>
 
@@ -45,9 +45,9 @@ export default function HomePage() {
               <div className="mt-12 lg:mt-16">
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3">
                   {[
-                    { icon: Brain, text: 'Personalized Learning' },
-                    { icon: Sparkles, text: 'AI-Powered Insights' },
-                    { icon: BookOpen, text: 'Study Smarter' },
+                    { icon: Brain, text: t('home.hero.feature1') },
+                    { icon: Sparkles, text: t('home.hero.feature2') },
+                    { icon: BookOpen, text: t('home.hero.feature3') },
                   ].map((feature, index) => (
                     <div key={index} className="flex gap-x-3">
                       <feature.icon
@@ -73,8 +73,8 @@ export default function HomePage() {
                       <Brain className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-lg font-medium">Smart Learning</div>
-                      <div className="text-sm text-muted-foreground">AI-powered insights</div>
+                      <div className="text-lg font-medium">{t('features.feature1.title')}</div>
+                      <div className="text-sm text-muted-foreground">{t('features.feature1.description')}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -82,8 +82,8 @@ export default function HomePage() {
                       <Sparkles className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-lg font-medium">Personalized</div>
-                      <div className="text-sm text-muted-foreground">Adaptive learning</div>
+                      <div className="text-lg font-medium">{t('features.feature2.title')}</div>
+                      <div className="text-sm text-muted-foreground">{t('features.feature2.description')}</div>
                     </div>
                   </div>
                 </div>
