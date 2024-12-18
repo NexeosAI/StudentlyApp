@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
+export type AIToolType = 'essay' | 'research' | 'notes' | 'report' | 'summary'
+
 export interface AIModel {
   id: string
   name: string
@@ -10,8 +12,6 @@ export interface AIModel {
   costPerToken: number
   recommendedUses: string[]
 }
-
-export type AIToolType = 'essay' | 'research' | 'notes' | 'report' | 'summary'
 
 interface AIModelsState {
   models: AIModel[]

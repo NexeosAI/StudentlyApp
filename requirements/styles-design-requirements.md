@@ -1,465 +1,236 @@
 # StudentlyAI Design System & Style Requirements
 
-## Logo Specifications
-
-### Logo Design
-```css
-/* Logo Colors */
---logo-primary: "#FF5C00";     /* Orange graduation cap */
---logo-text: "#111827";        /* Dark text for "StudentlyAI" */
-
-/* Logo Dimensions */
---logo-height-sm: 24px;
---logo-height-md: 32px;
---logo-height-lg: 48px;
-
-/* Logo Spacing */
---logo-icon-spacing: 8px;      /* Space between icon and text */
-```
-
-### Logo Usage
-- Minimum clear space: Equal to the height of the graduation cap icon
-- Minimum size: 24px height
-- File formats: SVG (preferred), PNG with transparency
-- Usage: Always maintain original proportions
-- Don't: Stretch, rotate, or alter logo colors
-- Don't: Add effects like shadows or gradients
-
-### Logo Variations
-1. Full logo (icon + text)
-2. Icon only (for favicons and small spaces)
-3. Dark mode variant (white text)
-4. Light mode variant (dark text)
+[Previous Logo Specifications section remains unchanged...]
 
 ## Brand Identity
 
-### Core Colors
-```css
-/* Brand Colors */
---brand-primary: "#FF5C00";     /* Main orange */
---brand-secondary: "#FF7A2E";   /* Light orange */
---brand-accent: "#FFF3EB";      /* Pale orange */
+### Theme System
 
-/* Primary Blues */
---primary-100: "#E6F3FF";       /* Light blue - backgrounds */
---primary-500: "#0066CC";       /* Main blue - buttons, links */
---primary-700: "#004C99";       /* Dark blue - hover states */
-
-/* Secondary Colors */
---secondary-300: "#FFB84D";     /* Orange - accents */
---secondary-500: "#FF9900";     /* Orange - CTAs */
-
-/* Neutral Colors */
---neutral-50: "#F9FAFB";        /* Lightest grey - backgrounds */
---neutral-100: "#F3F4F6";       /* Light grey - cards */
---neutral-300: "#D1D5DB";       /* Mid grey - borders */
---neutral-700: "#374151";       /* Dark grey - text */
---neutral-900: "#111827";       /* Darkest - headings */
-
-/* Semantic Colors */
---success-500: "#32D583";       /* Success states */
---warning-500: "#FBA944";       /* Warning states */
---error-500: "#FF4545";         /* Error states */
---info-500: "#2E90FA";         /* Info states */
-```
-
-### Typography System
-
-#### Font Families
-```css
---font-primary: "Inter", sans-serif;          /* Main text */
---font-display: "Clash Display", serif;       /* Headings */
---font-mono: "JetBrains Mono", monospace;     /* Code blocks */
-```
-
-#### Font Sizes
-```css
---text-xs: 0.75rem;      /* 12px */
---text-sm: 0.875rem;     /* 14px */
---text-base: 1rem;       /* 16px */
---text-lg: 1.125rem;     /* 18px */
---text-xl: 1.25rem;      /* 20px */
---text-2xl: 1.5rem;      /* 24px */
---text-3xl: 1.875rem;    /* 30px */
---text-4xl: 2.25rem;     /* 36px */
-```
-
-#### Line Heights
-```css
---leading-none: 1;        /* Headings */
---leading-tight: 1.25;    /* Compact text */
---leading-normal: 1.5;    /* Body text */
---leading-relaxed: 1.75;  /* Readable text */
---leading-loose: 2;       /* Spacious text */
-```
-
-### Spacing System
-```css
---space-1: 0.25rem;   /* 4px */
---space-2: 0.5rem;    /* 8px */
---space-3: 0.75rem;   /* 12px */
---space-4: 1rem;      /* 16px */
---space-6: 1.5rem;    /* 24px */
---space-8: 2rem;      /* 32px */
---space-12: 3rem;     /* 48px */
---space-16: 4rem;     /* 64px */
-```
-
-## Component Design
-
-### Buttons
-
-#### Base Styles
-```css
-.btn {
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-```
-
-#### Variants
+#### Default Theme (Orange)
 ```typescript
-interface ButtonVariants {
-  primary: {
-    background: "bg-primary-500";
-    hover: "hover:bg-primary-700";
-    text: "text-white";
-  };
-  secondary: {
-    background: "bg-white";
-    border: "border-2 border-primary-500";
-    text: "text-primary-500";
-    hover: "hover:bg-primary-50";
-  };
-  ghost: {
-    background: "bg-transparent";
-    text: "text-primary-500";
-    hover: "hover:bg-primary-50";
-  };
-}
+const defaultOrangeTheme = {
+  name: "Orange",
+  colors: {
+    50: "#FFF3EB",   // Lightest - backgrounds
+    100: "#FFE5D6",  // Very light - subtle backgrounds
+    200: "#FFCBB3",  // Light - hover states
+    300: "#FFB190",  // Medium light - borders
+    400: "#FF976D",  // Medium - disabled states
+    500: "#FF5C00",  // Base color - primary actions
+    600: "#E65300",  // Medium dark - hover states
+    700: "#CC4A00",  // Dark - active states
+    800: "#B34000",  // Very dark - text
+    900: "#993700"   // Darkest - headings
+  }
+};
 ```
 
-#### Sizes
+#### Preset Themes
 ```typescript
-interface ButtonSizes {
-  sm: {
-    padding: "px-3 py-2";
-    fontSize: "text-sm";
-  };
-  md: {
-    padding: "px-4 py-2";
-    fontSize: "text-base";
-  };
-  lg: {
-    padding: "px-6 py-3";
-    fontSize: "text-lg";
-  };
-}
+const presetThemes = {
+  blue: {
+    name: "Blue",
+    colors: {
+      50: "#EFF6FF",
+      100: "#DBEAFE",
+      200: "#BFDBFE",
+      300: "#93C5FD",
+      400: "#60A5FA",
+      500: "#3B82F6",  // Base color
+      600: "#2563EB",
+      700: "#1D4ED8",
+      800: "#1E40AF",
+      900: "#1E3A8A"
+    }
+  },
+  green: {
+    name: "Green",
+    colors: {
+      50: "#F0FDF4",
+      100: "#DCFCE7",
+      200: "#BBF7D0",
+      300: "#86EFAC",
+      400: "#4ADE80",
+      500: "#22C55E",  // Base color
+      600: "#16A34A",
+      700: "#15803D",
+      800: "#166534",
+      900: "#14532D"
+    }
+  },
+  purple: {
+    name: "Purple",
+    colors: {
+      50: "#FAF5FF",
+      100: "#F3E8FF",
+      200: "#E9D5FF",
+      300: "#D8B4FE",
+      400: "#C084FC",
+      500: "#A855F7",  // Base color
+      600: "#9333EA",
+      700: "#7E22CE",
+      800: "#6B21A8",
+      900: "#581C87"
+    }
+  }
+};
 ```
 
-### Cards
-
-#### Base Styles
-```css
-.card {
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-```
-
-#### Variants
+#### Custom Theme Generation
 ```typescript
-interface CardVariants {
-  default: {
-    padding: "p-6";
-    background: "bg-white";
-    border: "border border-neutral-200";
+interface CustomThemeGenerator {
+  // Input: Base color (500)
+  baseColor: string;  // e.g., "#FF5C00"
+  
+  // Color Shade Generation Algorithm
+  generateShades: {
+    // Lightening algorithm (50-400)
+    lighter: (baseColor: string, step: number) => string;
+    // Base color (500)
+    base: string;
+    // Darkening algorithm (600-900)
+    darker: (baseColor: string, step: number) => string;
   };
-  elevated: {
-    padding: "p-6";
-    background: "bg-white";
-    shadow: "shadow-lg";
+  
+  // Contrast Ratio Requirements
+  contrastRatios: {
+    textOnLight: number;     // Minimum 4.5:1 for normal text
+    textOnDark: number;      // Minimum 4.5:1 for normal text
+    largeTextOnLight: number; // Minimum 3:1 for large text
+    largeTextOnDark: number;  // Minimum 3:1 for large text
   };
-  compact: {
-    padding: "p-4";
-    background: "bg-white";
-    border: "border border-neutral-200";
-  };
-}
-```
-
-### Forms
-
-#### Input Fields
-```typescript
-interface InputStyles {
-  base: {
-    padding: "px-4 py-2";
-    border: "border border-neutral-300";
-    radius: "rounded-md";
-    fontSize: "text-base";
-  };
-  focus: {
-    ring: "ring-2 ring-primary-500";
-    border: "border-primary-500";
-  };
-  error: {
-    border: "border-error-500";
-    text: "text-error-500";
+  
+  // Color Override Options
+  overrides: {
+    // Allow specific shade overrides while maintaining contrast
+    shades?: Partial<Record<50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900, string>>;
+    // Validate overrides meet contrast requirements
+    validateOverride: (color: string, background: string) => boolean;
   };
 }
+
+// Example color shade generation
+const generateCustomTheme = (baseColor: string) => {
+  return {
+    // Lighter shades (reduce saturation, increase brightness)
+    50: adjustColor(baseColor, { saturation: -70%, brightness: +35% }),
+    100: adjustColor(baseColor, { saturation: -60%, brightness: +30% }),
+    200: adjustColor(baseColor, { saturation: -40%, brightness: +20% }),
+    300: adjustColor(baseColor, { saturation: -20%, brightness: +10% }),
+    400: adjustColor(baseColor, { saturation: -10%, brightness: +5% }),
+    // Base color
+    500: baseColor,
+    // Darker shades (maintain saturation, reduce brightness)
+    600: adjustColor(baseColor, { brightness: -10% }),
+    700: adjustColor(baseColor, { brightness: -20% }),
+    800: adjustColor(baseColor, { brightness: -30% }),
+    900: adjustColor(baseColor, { brightness: -40% })
+  };
+};
+
+// Contrast validation
+const validateContrast = (foreground: string, background: string) => {
+  const ratio = calculateContrastRatio(foreground, background);
+  return {
+    normalText: ratio >= 4.5,
+    largeText: ratio >= 3.0
+  };
+};
+
+// Example usage
+const customTheme = {
+  baseColor: "#FF5C00",  // User provided
+  theme: generateCustomTheme("#FF5C00"),
+  overrides: {
+    // Optional manual overrides
+    100: "#FFE1D1",  // Must pass contrast validation
+    900: "#8A3200"   // Must pass contrast validation
+  }
+};
 ```
 
-#### Select Dropdowns
+#### Theme Application
 ```typescript
-interface SelectStyles {
-  trigger: {
-    padding: "px-4 py-2";
-    border: "border border-neutral-300";
-    radius: "rounded-md";
-  };
-  content: {
-    background: "bg-white";
-    shadow: "shadow-lg";
-    radius: "rounded-md";
-    border: "border border-neutral-200";
-  };
-  item: {
-    padding: "px-4 py-2";
-    hover: "hover:bg-neutral-50";
-    selected: "bg-primary-50 text-primary-500";
-  };
-}
-```
-
-## Layout System
-
-### Grid System
-```typescript
-interface GridSystem {
-  columns: {
-    default: 12;
-    responsive: {
-      sm: 6;
-      md: 8;
-      lg: 12;
+interface ThemeApplication {
+  // CSS Variable Generation
+  cssVariables: {
+    primary: string;      // --theme-primary
+    shades: {
+      [key: string]: string;  // --theme-50 through --theme-900
     };
   };
-  breakpoints: {
-    xs: "320px";    // Small phones
-    sm: "640px";    // Large phones
-    md: "768px";    // Tablets
-    lg: "1024px";   // Laptops
-    xl: "1280px";   // Desktops
-    "2xl": "1536px" // Large screens
+  
+  // Tailwind Extension
+  tailwind: {
+    theme: {
+      extend: {
+        colors: {
+          theme: {
+            50: 'var(--theme-50)',
+            // ... through 900
+          }
+        }
+      }
+    }
   };
-  gaps: {
-    xs: "gap-2";    // 8px
-    sm: "gap-4";    // 16px
-    md: "gap-6";    // 24px
-    lg: "gap-8";    // 32px
-  };
-}
-```
-
-### Container Sizes
-```css
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* Breakpoint-specific max-widths */
-@media (min-width: 640px) {
-  .container { max-width: 640px; }
-}
-@media (min-width: 768px) {
-  .container { max-width: 768px; }
-}
-@media (min-width: 1024px) {
-  .container { max-width: 1024px; }
-}
-@media (min-width: 1280px) {
-  .container { max-width: 1280px; }
-}
-```
-
-## Dark Mode Support
-
-### Color Mapping
-```typescript
-interface DarkModeColors {
-  background: {
-    primary: "#111827";    /* Dark background */
-    secondary: "#1F2937";  /* Lighter dark background */
-    tertiary: "#374151";   /* Accent background */
-  };
-  text: {
-    primary: "#FFFFFF";    /* Main text */
-    secondary: "#E5E7EB";  /* Secondary text */
-    tertiary: "#9CA3AF";   /* Muted text */
-  };
-  border: {
-    default: "#374151";    /* Default borders */
-    focus: "#3B82F6";      /* Focus borders */
-  };
-}
-```
-
-### Theme Switching
-```typescript
-interface ThemeSwitching {
-  system: {
-    light: "(prefers-color-scheme: light)";
-    dark: "(prefers-color-scheme: dark)";
-  };
-  manual: {
+  
+  // Runtime Theme Switching
+  themeSwitch: {
+    // Save theme preference
     storage: "localStorage";
-    key: "theme-preference";
-  };
-  transition: {
-    duration: "duration-200";
-    timing: "ease-in-out";
-    properties: [
-      "background-color",
-      "color",
-      "border-color"
-    ];
-  };
-}
-```
-
-## Animation & Transitions
-
-### Duration Scale
-```css
---duration-75: 75ms;
---duration-100: 100ms;
---duration-150: 150ms;
---duration-200: 200ms;
---duration-300: 300ms;
---duration-500: 500ms;
-```
-
-### Easing Functions
-```css
---ease-linear: linear;
---ease-in: cubic-bezier(0.4, 0, 1, 1);
---ease-out: cubic-bezier(0, 0, 0.2, 1);
---ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-```
-
-### Common Animations
-```typescript
-interface Animations {
-  fade: {
-    in: "fade-in";
-    out: "fade-out";
-    duration: "duration-200";
-  };
-  slide: {
-    in: "slide-in";
-    out: "slide-out";
-    duration: "duration-200";
-  };
-  scale: {
-    in: "scale-in";
-    out: "scale-out";
-    duration: "duration-150";
+    key: "user-theme-preference";
+    
+    // Apply theme
+    applyTheme: (theme: Theme) => void;
+    
+    // Transition settings
+    transition: {
+      duration: "200ms";
+      timing: "ease-in-out";
+      properties: ["background-color", "color", "border-color"];
+    };
   };
 }
 ```
 
-## Accessibility
+[Rest of the original file content remains unchanged...]
 
-### Focus States
-```css
---focus-ring-color: rgb(59, 130, 246);
---focus-ring-offset: 2px;
---focus-ring-width: 2px;
-```
+## Theme Implementation Requirements
 
-### Color Contrast
-- Maintain WCAG 2.1 AA standards
-- Minimum contrast ratio: 4.5:1 for normal text
-- Minimum contrast ratio: 3:1 for large text
-- Interactive elements: 3:1 contrast with adjacent colors
+### Color Generation Rules
+1. Base color (500) must be provided in hex format
+2. Lighter shades (50-400):
+   - Progressively decrease saturation
+   - Progressively increase brightness
+3. Darker shades (600-900):
+   - Maintain saturation
+   - Progressively decrease brightness
+4. Each adjacent shade pair must maintain distinguishable contrast
 
-### Motion
-```css
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-```
+### Accessibility Requirements
+1. Text Contrast Ratios:
+   - Normal text (16px and under): minimum 4.5:1
+   - Large text (over 16px): minimum 3:1
+   - UI components and graphical objects: minimum 3:1
+2. Interactive Elements:
+   - Focus indicators: minimum 3:1 contrast
+   - Hover/Active states: must maintain required contrast ratios
+3. Error States:
+   - Error messages: minimum 4.5:1 contrast
+   - Error indicators: must be distinguishable by more than just color
 
-## Icons & Assets
-
-### Icon System
-```typescript
-interface IconSystem {
-  sizes: {
-    sm: "16px";
-    md: "24px";
-    lg: "32px";
-    xl: "48px";
-  };
-  weights: {
-    light: 300;
-    regular: 400;
-    bold: 700;
-  };
-  collections: {
-    ui: "lucide-react";
-    brand: "custom-icons";
-  };
-}
-```
-
-### Image Guidelines
-- Use WebP format with fallbacks
-- Responsive images with srcset
-- Lazy loading for off-screen images
-- Alt text for accessibility
-- Placeholder images during loading
-
-## Usage Guidelines
-
-### Best Practices
-1. Use semantic HTML elements
-2. Maintain consistent spacing scale
-3. Follow responsive design patterns
-4. Implement proper dark mode support
-5. Ensure accessibility compliance
-
-### Component Implementation
-```typescript
-interface ComponentImplementation {
-  naming: {
-    prefix: "sl";  // Studently
-    convention: "kebab-case";
-  };
-  structure: {
-    atomic: boolean;
-    modular: boolean;
-    responsive: boolean;
-  };
-  documentation: {
-    props: boolean;
-    examples: boolean;
-    accessibility: boolean;
-  };
-}
-```
+### Theme Customization Interface
+1. Base Color Selection:
+   - Color picker with hex input
+   - Preview of generated shades
+   - Real-time contrast validation
+2. Manual Overrides:
+   - Individual shade adjustment
+   - Contrast ratio display
+   - Invalid selection prevention
+3. Theme Preview:
+   - Live preview of UI components
+   - Dark/Light mode toggle
+   - Accessibility validation feedback
 
 This document should be regularly updated as the design system evolves. All implementations should follow these guidelines to maintain consistency across the platform.

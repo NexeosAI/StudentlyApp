@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '../ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { useLocale } from '@/lib/store/locale-store'
-import { locales } from '@/lib/config/locales'
+} from '../ui/dropdown-menu'
+import { useLocale } from '../../lib/store/locale-store'
+import { locales } from '../../lib/config/locales'
 import { Globe } from 'lucide-react'
 
 export function LocaleSwitcher() {

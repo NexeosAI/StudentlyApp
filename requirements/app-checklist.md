@@ -112,7 +112,7 @@
   - [x] AI Chat Assistant
   - [x] AI Research Helper
   - [x] AI Writing Coach
-  - [ ] AI Maths Solver
+  - [x] AI Maths Solver
   - [x] AI Study Planner
   - [x] AI Note Summarizer
   - [ ] AI Exam Prep Guide

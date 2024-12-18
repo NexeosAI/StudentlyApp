@@ -1,27 +1,7 @@
-export type Theme = {
+export interface Theme {
   name: string
   label: string
-  colors: {
-    background: string
-    foreground: string
-    card: string
-    cardForeground: string
-    popover: string
-    popoverForeground: string
-    primary: string
-    primaryForeground: string
-    secondary: string
-    secondaryForeground: string
-    muted: string
-    mutedForeground: string
-    accent: string
-    accentForeground: string
-    destructive: string
-    destructiveForeground: string
-    border: string
-    input: string
-    ring: string
-  }
+  colors: Record<string, string>
 }
 
 export const themes: Theme[] = [
@@ -29,75 +9,150 @@ export const themes: Theme[] = [
     name: 'light',
     label: 'Light',
     colors: {
-      background: '#FFFFFF',
-      foreground: '#111827', // neutral-900
-      card: '#F9FAFB', // neutral-50
-      cardForeground: '#111827',
-      popover: '#FFFFFF',
-      popoverForeground: '#111827',
-      primary: '#FF5C00', // brand-primary
-      primaryForeground: '#FFFFFF',
-      secondary: '#FF7A2E', // brand-secondary
-      secondaryForeground: '#FFFFFF',
-      muted: '#F3F4F6', // neutral-100
-      mutedForeground: '#374151', // neutral-700
-      accent: '#FFF3EB', // brand-accent
-      accentForeground: '#111827',
-      destructive: '#FF4545', // error-500
-      destructiveForeground: '#FFFFFF',
-      border: '#D1D5DB', // neutral-300
-      input: '#D1D5DB',
-      ring: '#FF5C00',
+      'background': '#ffffff',
+      'foreground': '#0f172a',
+      'card': '#ffffff',
+      'card-foreground': '#0f172a',
+      'popover': '#ffffff',
+      'popover-foreground': '#0f172a',
+      'primary': '#FF5C00',
+      'primary-foreground': '#ffffff',
+      'secondary': '#f1f5f9',
+      'secondary-foreground': '#0f172a',
+      'muted': '#f1f5f9',
+      'muted-foreground': '#64748b',
+      'accent': '#f1f5f9',
+      'accent-foreground': '#0f172a',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#e2e8f0',
+      'input': '#e2e8f0',
+      'ring': '#FF5C00',
     },
   },
   {
     name: 'dark',
     label: 'Dark',
     colors: {
-      background: '#111827', // neutral-900
-      foreground: '#F9FAFB', // neutral-50
-      card: '#1F2937',
-      cardForeground: '#F9FAFB',
-      popover: '#1F2937',
-      popoverForeground: '#F9FAFB',
-      primary: '#FF5C00', // brand-primary
-      primaryForeground: '#FFFFFF',
-      secondary: '#FF7A2E', // brand-secondary
-      secondaryForeground: '#FFFFFF',
-      muted: '#374151', // neutral-700
-      mutedForeground: '#D1D5DB', // neutral-300
-      accent: '#4B5563',
-      accentForeground: '#F9FAFB',
-      destructive: '#FF4545', // error-500
-      destructiveForeground: '#FFFFFF',
-      border: '#374151',
-      input: '#374151',
-      ring: '#FF5C00',
+      'background': '#0f172a',
+      'foreground': '#f8fafc',
+      'card': '#1e293b',
+      'card-foreground': '#f8fafc',
+      'popover': '#1e293b',
+      'popover-foreground': '#f8fafc',
+      'primary': '#FF5C00',
+      'primary-foreground': '#ffffff',
+      'secondary': '#1e293b',
+      'secondary-foreground': '#f8fafc',
+      'muted': '#1e293b',
+      'muted-foreground': '#94a3b8',
+      'accent': '#1e293b',
+      'accent-foreground': '#f8fafc',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#1e293b',
+      'input': '#1e293b',
+      'ring': '#FF5C00',
     },
   },
   {
-    name: 'blue',
-    label: 'Blue',
+    name: 'orange',
+    label: 'Orange',
     colors: {
-      background: '#E6F3FF', // primary-100
-      foreground: '#111827',
-      card: '#FFFFFF',
-      cardForeground: '#111827',
-      popover: '#FFFFFF',
-      popoverForeground: '#111827',
-      primary: '#0066CC', // primary-500
-      primaryForeground: '#FFFFFF',
-      secondary: '#004C99', // primary-700
-      secondaryForeground: '#FFFFFF',
-      muted: '#F3F4F6',
-      mutedForeground: '#374151',
-      accent: '#E6F3FF',
-      accentForeground: '#111827',
-      destructive: '#FF4545',
-      destructiveForeground: '#FFFFFF',
-      border: '#D1D5DB',
-      input: '#D1D5DB',
-      ring: '#0066CC',
+      'background': '#ffffff',
+      'foreground': '#0f172a',
+      'card': '#ffffff',
+      'card-foreground': '#0f172a',
+      'popover': '#ffffff',
+      'popover-foreground': '#0f172a',
+      'primary': '#FF5C00',
+      'primary-foreground': '#ffffff',
+      'secondary': '#FFF3EB',
+      'secondary-foreground': '#0f172a',
+      'muted': '#FFF3EB',
+      'muted-foreground': '#64748b',
+      'accent': '#FFE5D6',
+      'accent-foreground': '#0f172a',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#FFE5D6',
+      'input': '#FFE5D6',
+      'ring': '#FF5C00',
+    },
+  },
+  {
+    name: 'purple',
+    label: 'Purple',
+    colors: {
+      'background': '#ffffff',
+      'foreground': '#0f172a',
+      'card': '#ffffff',
+      'card-foreground': '#0f172a',
+      'popover': '#ffffff',
+      'popover-foreground': '#0f172a',
+      'primary': '#8B5CF6',
+      'primary-foreground': '#ffffff',
+      'secondary': '#F3E8FF',
+      'secondary-foreground': '#0f172a',
+      'muted': '#F3E8FF',
+      'muted-foreground': '#64748b',
+      'accent': '#E9D5FF',
+      'accent-foreground': '#0f172a',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#E9D5FF',
+      'input': '#E9D5FF',
+      'ring': '#8B5CF6',
+    },
+  },
+  {
+    name: 'green',
+    label: 'Green',
+    colors: {
+      'background': '#ffffff',
+      'foreground': '#0f172a',
+      'card': '#ffffff',
+      'card-foreground': '#0f172a',
+      'popover': '#ffffff',
+      'popover-foreground': '#0f172a',
+      'primary': '#22C55E',
+      'primary-foreground': '#ffffff',
+      'secondary': '#F0FDF4',
+      'secondary-foreground': '#0f172a',
+      'muted': '#F0FDF4',
+      'muted-foreground': '#64748b',
+      'accent': '#DCFCE7',
+      'accent-foreground': '#0f172a',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#DCFCE7',
+      'input': '#DCFCE7',
+      'ring': '#22C55E',
+    },
+  },
+  {
+    name: 'rose',
+    label: 'Rose',
+    colors: {
+      'background': '#ffffff',
+      'foreground': '#0f172a',
+      'card': '#ffffff',
+      'card-foreground': '#0f172a',
+      'popover': '#ffffff',
+      'popover-foreground': '#0f172a',
+      'primary': '#F43F5E',
+      'primary-foreground': '#ffffff',
+      'secondary': '#FFF1F2',
+      'secondary-foreground': '#0f172a',
+      'muted': '#FFF1F2',
+      'muted-foreground': '#64748b',
+      'accent': '#FFE4E6',
+      'accent-foreground': '#0f172a',
+      'destructive': '#ef4444',
+      'destructive-foreground': '#f8fafc',
+      'border': '#FFE4E6',
+      'input': '#FFE4E6',
+      'ring': '#F43F5E',
     },
   },
 ]

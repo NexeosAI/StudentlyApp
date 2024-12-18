@@ -1,29 +1,19 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { locales } from '../config/locales'
 
-type LocaleStore = {
+interface LocaleState {
   locale: string
   setLocale: (locale: string) => void
 }
 
-const SUPPORTED_LOCALES = Object.keys(locales)
-const DEFAULT_LOCALE = 'en-GB'
-
-export const useLocale = create<LocaleStore>()(
+export const useLocale = create<LocaleState>()(
   persist(
     (set) => ({
-      locale: DEFAULT_LOCALE,
-      setLocale: (locale: string) => {
-        if (!SUPPORTED_LOCALES.includes(locale)) {
-          console.warn(`Locale ${locale} not supported, defaulting to ${DEFAULT_LOCALE}`)
-          locale = DEFAULT_LOCALE
-        }
-        set({ locale })
-      },
+      locale: 'en-US',
+      setLocale: (locale: string) => set({ locale }),
     }),
     {
-      name: 'locale-storage',
+      name: 'studently-locale',
     }
   )
 )

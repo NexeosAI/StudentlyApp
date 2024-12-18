@@ -7,7 +7,7 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Check } from 'lucide-react'
 import { useAIModels, type AIModel, type AIToolType } from '@/lib/store/ai-models-store'
 import { toast } from 'sonner'
-import { Skeleton } from '@/components/ui/skeleton'
+
 
 interface OpenRouterModel {
   id: string
@@ -40,48 +40,36 @@ export function ModelSelectorDialog({ open, onOpenChange }: ModelSelectorDialogP
     const fetchModels = async () => {
       try {
         setLoading(true);
-        console.log('Fetching models...'); // Debug log
+        console.log('API Key prefix:', import.meta.env.VITE_OPENROUTER_API_KEY?.substring(0, 8));
         
         const response = await fetch('https://openrouter.ai/api/v1/models', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
-            'HTTP-Referer': 'https://studentlyai.com',
-            'X-Title': 'StudentlyAI'
+            'HTTP-Referer': window.location.origin,
+            'X-Title': 'StudentlyAI',
+            'Content-Type': 'application/json'
           }
         });
         
         if (!response.ok) {
           const errorText = await response.text();
           console.error('API Error Response:', errorText);
-          throw new Error(`Failed to fetch models: ${response.statusText}`);
+          throw new Error(`API Error: ${response.status} ${response.statusText}`);
         }
-        
+
         const data = await response.json();
-        console.log('API Response:', data); // Debug log
+        console.log('API Response:', data);
         
-        if (data?.data && Array.isArray(data.data)) {
-          const formattedModels = data.data.map((model: any) => ({
-            id: model.id,
-            name: model.name || model.id,
-            description: model.description || '',
-            context_length: model.context_length || 0,
-            pricing: {
-              prompt: model.pricing?.prompt || '0',
-              completion: model.pricing?.completion || '0'
-            }
-          }));
-          
-          console.log('Formatted models:', formattedModels); // Debug log
-          setModels(formattedModels);
-        } else {
-          console.error('Invalid API response format:', data);
-          throw new Error('Invalid data format received');
+        if (!data?.data) {
+          throw new Error('Invalid API response format');
         }
-      } catch (error) {
-        console.error('Error fetching models:', error);
-        toast.error(error instanceof Error ? error.message : 'Failed to fetch models');
-        setModels([]); // Set empty array on error
+
+        setModels(data.data);
+        console.log('Models loaded:', data.data.length);
+      } catch (err) {
+        console.error('Fetch error:', err);
+        toast.error(err instanceof Error ? err.message : 'Failed to fetch models');
       } finally {
         setLoading(false);
       }
@@ -93,23 +81,15 @@ export function ModelSelectorDialog({ open, onOpenChange }: ModelSelectorDialogP
   }, [open]);
 
   const handleModelSelect = (model: OpenRouterModel) => {
-    console.log('handleModelSelect called with:', model); // Debug log
-    if (!model?.id) {
-      console.error('Invalid model object:', model);
-      return;
-    }
-    
+    console.log('Model selected:', model);
     setSelectedModel(model);
-    setSearchQuery(model.name || model.id);
+    setSearchQuery(model.name);
     
-    // Update capabilities and recommended uses
     const defaultCapabilities = ['Text Generation', 'Completion'];
     setCapabilities(defaultCapabilities.join(', '));
     
     const defaultUses = ['Essays', 'Research', 'Notes'];
     setRecommendedUses(defaultUses.join(', '));
-    
-    console.log('Model selected:', { model, capabilities, recommendedUses }); // Debug log
   };
 
   const filteredModels = searchQuery === '' 
@@ -118,7 +98,6 @@ export function ModelSelectorDialog({ open, onOpenChange }: ModelSelectorDialogP
         model.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         model.id.toLowerCase().includes(searchQuery.toLowerCase())
       );
-  console.log('Filtered models:', filteredModels.length); // Debug log
 
   const handleSubmit = () => {
     if (!selectedModel) return
@@ -160,36 +139,38 @@ export function ModelSelectorDialog({ open, onOpenChange }: ModelSelectorDialogP
             <Label>Model</Label>
             <Command shouldFilter={false} className="rounded-lg border shadow-md">
               <CommandInput
-                placeholder="Type to search models..."
+                placeholder={loading ? "Loading models..." : "Type to search models..."}
                 value={searchQuery}
                 onValueChange={setSearchQuery}
+                disabled={loading}
                 className="border-none focus:ring-0"
               />
               <CommandList>
-                <CommandEmpty>No models found</CommandEmpty>
-                <CommandGroup>
+                <CommandEmpty>
                   {loading ? (
-                    <div className="p-6 text-center">
-                      <Skeleton className="h-4 w-[200px] mx-auto" />
+                    <div className="p-4 text-center">
+                      <div className="animate-spin h-4 w-4 border-2 border-primary mx-auto" />
                     </div>
-                  ) : filteredModels.map((model) => (
+                  ) : (
+                    "No models found"
+                  )}
+                </CommandEmpty>
+                <CommandGroup>
+                  {filteredModels.map((model) => (
                     <CommandItem
                       key={model.id}
-                      onSelect={() => {
-                        console.log('Model selected:', model); // Debug log
-                        handleModelSelect(model);
-                      }}
-                      className="cursor-pointer"
+                      onSelect={() => handleModelSelect(model)}
+                      className="flex items-center gap-2 px-4 py-2 cursor-pointer hover:bg-accent"
                     >
-                      <div className="flex items-center gap-2">
-                        {selectedModel?.id === model.id && <Check className="h-4 w-4" />}
-                        <div className="flex flex-col">
-                          <span>{model.name || model.id}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {model.context_length.toLocaleString()} tokens, ${parseFloat(model.pricing.completion).toFixed(6)}/token
-                          </span>
+                      <div className="flex-1">
+                        <div className="font-medium">{model.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {model.context_length.toLocaleString()} tokens, ${parseFloat(model.pricing.completion).toFixed(6)}/token
                         </div>
                       </div>
+                      {selectedModel?.id === model.id && (
+                        <Check className="h-4 w-4 text-primary" />
+                      )}
                     </CommandItem>
                   ))}
                 </CommandGroup>

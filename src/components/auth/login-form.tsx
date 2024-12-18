@@ -21,7 +21,7 @@ export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
-  const { mockLogin } = useAuth()
+  const { setUser, setToken } = useAuth()
 
   const from = location.state?.from?.pathname || '/dashboard'
 
@@ -42,12 +42,27 @@ export function LoginForm() {
       setIsLoading(true)
       logger.info('Attempting login', { email: data.email })
       
-      // In development, we ignore the password
-      await mockLogin(data.email)
+      // In development, simulate login with admin or user role
+      if (import.meta.env.DEV) {
+        const isAdmin = data.email.includes('admin')
+        const user = {
+          id: '1',
+          email: data.email,
+          name: isAdmin ? 'Admin User' : 'Regular User',
+          role: isAdmin ? 'admin' as const : 'user' as const
+        }
+        setUser(user)
+        setToken('mock-token')
+        
+        logger.info('Login successful, redirecting', { from })
+        toast.success('Logged in successfully')
+        navigate(from, { replace: true })
+        return
+      }
       
-      logger.info('Login successful, redirecting', { from })
-      toast.success('Logged in successfully')
-      navigate(from, { replace: true })
+      // In production, implement actual login logic here
+      toast.error('Login not implemented in production yet')
+      
     } catch (error) {
       logger.error('Login failed', { error })
       toast.error('Invalid email or password')
@@ -98,7 +113,7 @@ export function LoginForm() {
       </Button>
       {import.meta.env.DEV && (
         <p className="text-xs text-muted-foreground text-center mt-2">
-          Development mode: Any email will work
+          Development mode: Use admin@example.com for admin access
         </p>
       )}
     </form>

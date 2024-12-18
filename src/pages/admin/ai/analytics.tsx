@@ -1,90 +1,215 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { useAIProvider } from "@/lib/store/ai-provider-store"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-const usageData = [
-  { name: "Mon", tokens: 4000, cost: 120 },
-  { name: "Tue", tokens: 3000, cost: 90 },
-  { name: "Wed", tokens: 5000, cost: 150 },
-  { name: "Thu", tokens: 2780, cost: 83 },
-  { name: "Fri", tokens: 1890, cost: 57 },
-  { name: "Sat", tokens: 2390, cost: 72 },
-  { name: "Sun", tokens: 3490, cost: 105 },
-]
+interface ModelUsageData {
+  tokens: number
+  cost: number
+  avgResponseTime: number
+}
 
-export default function AIAnalyticsPage() {
+interface PerformanceData {
+  avgResponseTime: number
+  successRate: number
+  errorRate: number
+  concurrentRequests: number
+}
+
+interface UsageData {
+  daily: Array<{
+    date: string
+    tokens: number
+    cost: number
+  }>
+  modelUsage: Record<string, ModelUsageData>
+  performance: PerformanceData
+}
+
+// Mock data for demonstration
+const mockUsageData: UsageData = {
+  daily: [
+    { date: '2024-01-01', tokens: 125000, cost: 0.25 },
+    { date: '2024-01-02', tokens: 150000, cost: 0.30 },
+    { date: '2024-01-03', tokens: 175000, cost: 0.35 },
+    { date: '2024-01-04', tokens: 200000, cost: 0.40 },
+    { date: '2024-01-05', tokens: 225000, cost: 0.45 },
+  ],
+  modelUsage: {
+    'gpt-4': { tokens: 500000, cost: 15.00, avgResponseTime: 2.3 },
+    'gpt-3.5-turbo': { tokens: 1500000, cost: 3.00, avgResponseTime: 1.1 },
+    'claude-2': { tokens: 750000, cost: 6.00, avgResponseTime: 1.8 },
+  },
+  performance: {
+    avgResponseTime: 1.7,
+    successRate: 99.2,
+    errorRate: 0.8,
+    concurrentRequests: 45,
+  }
+}
+
+export default function AnalyticsPage() {
+  const { providers } = useAIProvider()
+
+  const totalCost = Object.values(mockUsageData.modelUsage)
+    .reduce((sum, { cost }) => sum + cost, 0)
+  
+  const totalTokens = Object.values(mockUsageData.modelUsage)
+    .reduce((sum, { tokens }) => sum + tokens, 0)
+
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight">Usage Analytics</h2>
-        <p className="text-muted-foreground">Monitor AI usage and costs</p>
+        <h1 className="text-2xl font-bold">Analytics</h1>
+        <p className="text-muted-foreground">Monitor AI service usage and performance</p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <Card>
-          <CardHeader>
-            <CardTitle>Total Usage</CardTitle>
-            <CardDescription>Past 7 days</CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Total Cost (30d)
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">22,550 tokens</div>
-            <p className="text-xs text-muted-foreground">+15.8% from last week</p>
-            <div className="h-[200px] mt-4">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={usageData}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="tokens" fill="#2563eb" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
+            <div className="text-2xl font-bold">${totalCost.toFixed(2)}</div>
+            <p className="text-xs text-muted-foreground">
+              +12.5% from last month
+            </p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Total Cost</CardTitle>
-            <CardDescription>Past 7 days</CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Total Tokens (30d)
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$677.00</div>
-            <p className="text-xs text-muted-foreground">+12.3% from last week</p>
-            <div className="h-[200px] mt-4">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={usageData}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="cost" stroke="#2563eb" />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
+            <div className="text-2xl font-bold">{(totalTokens / 1000000).toFixed(1)}M</div>
+            <p className="text-xs text-muted-foreground">
+              +8.2% from last month
+            </p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Model Distribution</CardTitle>
-            <CardDescription>Usage by model</CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Success Rate
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>GPT-4</div>
-                <div className="font-medium">45%</div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div>Claude 2</div>
-                <div className="font-medium">35%</div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div>GPT-3.5</div>
-                <div className="font-medium">20%</div>
-              </div>
-            </div>
+            <div className="text-2xl font-bold">{mockUsageData.performance.successRate}%</div>
+            <p className="text-xs text-muted-foreground">
+              +0.3% from last month
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Avg Response Time
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{mockUsageData.performance.avgResponseTime}s</div>
+            <p className="text-xs text-muted-foreground">
+              -0.2s from last month
+            </p>
           </CardContent>
         </Card>
       </div>
+
+      <Tabs defaultValue="usage" className="space-y-4">
+        <TabsList>
+          <TabsTrigger value="usage">Usage by Model</TabsTrigger>
+          <TabsTrigger value="performance">Performance</TabsTrigger>
+          <TabsTrigger value="costs">Cost Analysis</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="usage" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Model Usage</CardTitle>
+              <CardDescription>Token usage and costs by model</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {Object.entries(mockUsageData.modelUsage).map(([model, data]) => (
+                  <div key={model} className="flex items-center justify-between border-b pb-2">
+                    <div>
+                      <div className="font-medium">{model}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {(data.tokens / 1000).toLocaleString()}k tokens
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-medium">${data.cost.toFixed(2)}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {data.avgResponseTime}s avg
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="performance" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>System Performance</CardTitle>
+              <CardDescription>Response times and error rates</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium">Success Rate</div>
+                    <div className="text-2xl">{mockUsageData.performance.successRate}%</div>
+                    <div className="text-sm text-muted-foreground">
+                      {mockUsageData.performance.errorRate}% error rate
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-sm font-medium">Response Time</div>
+                    <div className="text-2xl">{mockUsageData.performance.avgResponseTime}s</div>
+                    <div className="text-sm text-muted-foreground">
+                      Average response time
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="costs" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Cost Analysis</CardTitle>
+              <CardDescription>Cost breakdown by provider and model</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {providers.map((provider) => (
+                  <div key={provider.id} className="space-y-2">
+                    <div className="font-medium">{provider.name}</div>
+                    {provider.models.map((model) => (
+                      <div key={model.id} className="flex items-center justify-between text-sm">
+                        <span>{model.name}</span>
+                        <span>${(model.costPerToken * 1000).toFixed(4)}/1K tokens</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   )
 }

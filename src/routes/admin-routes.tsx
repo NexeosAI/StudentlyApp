@@ -1,28 +1,31 @@
 import { RouteObject } from 'react-router-dom'
 import { AdminLayout } from '@/layouts/admin-layout'
+import { ProtectedRoute } from '@/components/auth/protected-route'
 import AdminDashboard from '@/pages/admin/dashboard'
 import AdminErrorPage from '@/pages/admin/error-page'
 import UsersLayout from '@/pages/admin/users/layout'
 import SecurityLayout from '@/pages/admin/security/layout'
 import SettingsLayout from '@/pages/admin/settings/layout'
 import AIProviderLayout from '@/pages/admin/ai-providers/layout'
-import ProvidersPage from '@/pages/admin/ai-providers/providers'
-import ModelsPage from '@/pages/admin/ai-providers/models'
-import AnalyticsPage from '@/pages/admin/ai-providers/analytics'
-import BudgetPage from '@/pages/admin/ai-providers/budget'
-import AuditLogPage from '@/pages/admin/ai-providers/audit-log'
+import ProvidersPage from '@/pages/admin/ai/providers'
+import AIModelsPage from '@/pages/admin/ai/models'
+import AnalyticsPage from '@/pages/admin/ai/analytics'
+import BudgetPage from '@/pages/admin/ai/budget'
+import AuditLogPage from '@/pages/admin/ai/audit'
+import AddModelPage from '@/pages/admin/ai/add-model'
 
 export const adminRoutes: RouteObject[] = [
   {
-    element: <AdminLayout />,
+    path: '/admin',
+    element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,
     errorElement: <AdminErrorPage />,
     children: [
       {
-        path: '/admin',
+        index: true,
         element: <AdminDashboard />
       },
       {
-        path: '/admin/analytics',
+        path: 'analytics',
         element: <div>Analytics</div>,
         children: [
           {
@@ -36,7 +39,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/users',
+        path: 'users',
         element: <UsersLayout />,
         children: [
           {
@@ -54,7 +57,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/content',
+        path: 'content',
         element: <div>Content</div>,
         children: [
           {
@@ -68,7 +71,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/products',
+        path: 'products',
         element: <div>Products</div>,
         children: [
           {
@@ -82,7 +85,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/learning',
+        path: 'learning',
         element: <div>Learning</div>,
         children: [
           {
@@ -96,7 +99,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/billing',
+        path: 'billing',
         element: <div>Billing</div>,
         children: [
           {
@@ -110,20 +113,19 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/ai-providers',
-        element: <AIProviderLayout />,
+        path: 'ai',
         children: [
           {
-            path: 'overview',
-            element: <AnalyticsPage />
+            path: 'models',
+            element: <AIModelsPage />
+          },
+          {
+            path: 'models/add',
+            element: <AddModelPage />
           },
           {
             path: 'providers',
             element: <ProvidersPage />
-          },
-          {
-            path: 'models',
-            element: <ModelsPage />
           },
           {
             path: 'analytics',
@@ -134,13 +136,13 @@ export const adminRoutes: RouteObject[] = [
             element: <BudgetPage />
           },
           {
-            path: 'audit-log',
+            path: 'audit',
             element: <AuditLogPage />
           }
         ]
       },
       {
-        path: '/admin/security',
+        path: 'security',
         element: <SecurityLayout />,
         children: [
           {
@@ -158,7 +160,7 @@ export const adminRoutes: RouteObject[] = [
         ]
       },
       {
-        path: '/admin/settings',
+        path: 'settings',
         element: <SettingsLayout />,
         children: [
           {

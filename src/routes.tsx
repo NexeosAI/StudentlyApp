@@ -6,7 +6,6 @@ import DashboardPage from './pages/dashboard'
 import { ProtectedRoute } from './components/auth/protected-route'
 import { MarketingLayout } from './layouts/marketing-layout'
 import { AppLayout } from './layouts/app-layout'
-import { AdminLayout } from './layouts/admin-layout'
 import HomePage from './pages/home'
 import PricingPage from './pages/pricing'
 import FeaturesPage from './pages/features'
@@ -15,12 +14,6 @@ import BlogPage from './pages/blog'
 import ResourcesPage from './pages/resources'
 import ContactPage from './pages/contact'
 import NotFoundPage from './pages/not-found'
-import AdminDashboard from './pages/admin/dashboard'
-import AIProvidersPage from './pages/admin/ai/providers'
-import AIModelsPage from './pages/admin/ai/models'
-import AIAnalyticsPage from './pages/admin/ai/analytics'
-import BudgetAlertsPage from './pages/admin/ai/budget'
-import AuditLogPage from './pages/admin/ai/audit'
 
 // Import chat & writing pages
 import ChatAssistantPage from './pages/chat/assistant'
@@ -47,6 +40,8 @@ import EssayWriterPage from './pages/content/essay'
 import ReportGeneratorPage from './pages/content/report'
 import ResearchProposalPage from './pages/content/proposal'
 import AbstractGeneratorPage from './pages/content/abstract'
+
+import { adminRoutes } from './routes/admin-routes'
 
 const router = createBrowserRouter([
   {
@@ -113,20 +108,7 @@ const router = createBrowserRouter([
           },
         ],
       },
-    ],
-  },
-  {
-    path: '/admin',
-    element: <ProtectedRoute><AdminLayout /></ProtectedRoute>,
-    errorElement: <NotFoundPage />,
-    children: [
-      { index: true, element: <AdminDashboard /> },
-      { path: 'dashboard', element: <AdminDashboard /> },
-      { path: 'ai/providers', element: <AIProvidersPage /> },
-      { path: 'ai/models', element: <AIModelsPage /> },
-      { path: 'ai/analytics', element: <AIAnalyticsPage /> },
-      { path: 'ai/budget', element: <BudgetAlertsPage /> },
-      { path: 'ai/audit', element: <AuditLogPage /> },
+      ...adminRoutes,
     ],
   },
 ])

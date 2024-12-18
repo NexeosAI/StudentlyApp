@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Bell, Menu, Search } from 'lucide-react'
+import { Bell, Menu, Search, GraduationCap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -11,8 +11,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Logo } from '@/components/ui/logo'
 import { useAIProviderStore } from '@/lib/store/ai-provider-store'
+import { ThemeSwitcher } from '@/components/theme/theme-switcher'
 
 interface AdminHeaderProps {
   onMenuClick: () => void
@@ -38,8 +38,9 @@ export function AdminHeader({ onMenuClick }: AdminHeaderProps) {
             <span className="sr-only">Toggle menu</span>
           </Button>
           
-          <Link to="/admin" className="hidden lg:block">
-            <Logo />
+          <Link to="/admin" className="hidden lg:flex items-center space-x-2">
+            <GraduationCap className="h-6 w-6 text-primary" />
+            <span className="text-xl font-semibold">StudentlyAI</span>
           </Link>
         </div>
 
@@ -54,6 +55,8 @@ export function AdminHeader({ onMenuClick }: AdminHeaderProps) {
               />
             </div>
           </form>
+
+          <ThemeSwitcher />
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

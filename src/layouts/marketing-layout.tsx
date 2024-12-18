@@ -55,7 +55,7 @@ export function MarketingLayout() {
               </div>
             )}
             <div className="md:hidden">
-              <MobileMenu items={navigation} />
+              <MobileMenu navigation={navigation} />
             </div>
           </div>
         </div>

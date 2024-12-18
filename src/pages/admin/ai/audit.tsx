@@ -1,97 +1,142 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { useState } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card'
+import { Input } from '../../../components/ui/input'
+import { Button } from '../../../components/ui/button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select'
+import { useAIProvider } from '../../../lib/store/ai-provider-store'
+import { Download, Search, AlertTriangle, CheckCircle, XCircle, Info } from 'lucide-react'
 
-export default function AuditLogPage() {
+export default function AuditPage() {
+  const { auditLog } = useAIProvider()
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filterType, setFilterType] = useState('all')
+
+  const filteredLogs = auditLog
+    .filter((log) => {
+      if (searchTerm) {
+        const searchLower = searchTerm.toLowerCase()
+        return (
+          log.action.toLowerCase().includes(searchLower) ||
+          log.entityType.toLowerCase().includes(searchLower) ||
+          log.details?.toLowerCase().includes(searchLower)
+        )
+      }
+      return true
+    })
+    .filter((log) => {
+      if (filterType === 'all') return true
+      return log.action === filterType
+    })
+    .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+
+  const getStatusIcon = (action: string) => {
+    switch (action) {
+      case 'error':
+        return <AlertTriangle className="h-4 w-4 text-destructive" />
+      case 'success':
+        return <CheckCircle className="h-4 w-4 text-green-500" />
+      case 'warning':
+        return <XCircle className="h-4 w-4 text-yellow-500" />
+      default:
+        return <Info className="h-4 w-4 text-muted-foreground" />
+    }
+  }
+
+  const handleExport = () => {
+    const csvContent = [
+      ['Timestamp', 'Action', 'Entity Type', 'Entity ID', 'Details'].join(','),
+      ...filteredLogs.map((log) =>
+        [
+          log.timestamp.toISOString(),
+          log.action,
+          log.entityType,
+          log.entityId,
+          log.details || '',
+        ].join(',')
+      ),
+    ].join('\n')
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = `audit-log-${new Date().toISOString()}.csv`
+    link.click()
+  }
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Audit Log</h2>
-        <p className="text-muted-foreground">Track AI usage and system events</p>
+    <div className="space-y-6 p-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Audit Log</h1>
+        <Button onClick={handleExport} className="gap-2">
+          <Download className="h-4 w-4" />
+          Export CSV
+        </Button>
       </div>
 
-      <div className="grid gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Recent Events</CardTitle>
-            <CardDescription>System events and AI interactions</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Timestamp</TableHead>
-                  <TableHead>Event Type</TableHead>
-                  <TableHead>User</TableHead>
-                  <TableHead>Model</TableHead>
-                  <TableHead>Details</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>2023-12-17 19:15:23</TableCell>
-                  <TableCell>
-                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800">
-                      API Call
-                    </span>
-                  </TableCell>
-                  <TableCell>john.doe@example.com</TableCell>
-                  <TableCell>GPT-4</TableCell>
-                  <TableCell>Essay generation request</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>2023-12-17 19:14:45</TableCell>
-                  <TableCell>
-                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800">
-                      Rate Limit
-                    </span>
-                  </TableCell>
-                  <TableCell>jane.smith@example.com</TableCell>
-                  <TableCell>Claude 2</TableCell>
-                  <TableCell>Rate limit warning</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>2023-12-17 19:13:12</TableCell>
-                  <TableCell>
-                    <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800">
-                      Success
-                    </span>
-                  </TableCell>
-                  <TableCell>admin@example.com</TableCell>
-                  <TableCell>GPT-3.5</TableCell>
-                  <TableCell>Model configuration updated</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Event Summary</CardTitle>
-            <CardDescription>Past 24 hours</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 md:grid-cols-4">
-              <div>
-                <div className="text-sm font-medium text-muted-foreground">Total Events</div>
-                <div className="text-2xl font-bold">1,234</div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-muted-foreground">API Calls</div>
-                <div className="text-2xl font-bold">956</div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-muted-foreground">Warnings</div>
-                <div className="text-2xl font-bold">45</div>
-              </div>
-              <div>
-                <div className="text-sm font-medium text-muted-foreground">Errors</div>
-                <div className="text-2xl font-bold">12</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="flex gap-4">
+        <div className="relative flex-1">
+          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Search audit logs..."
+            className="pl-8"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <Select value={filterType} onValueChange={setFilterType}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Filter by type" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Events</SelectItem>
+            <SelectItem value="create">Create</SelectItem>
+            <SelectItem value="update">Update</SelectItem>
+            <SelectItem value="delete">Delete</SelectItem>
+            <SelectItem value="error">Errors</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Recent Activity</CardTitle>
+          <CardDescription>
+            A detailed log of all AI provider-related activities and system events.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {filteredLogs.map((log) => (
+              <div
+                key={log.id}
+                className="flex items-start gap-4 rounded-lg border p-4"
+              >
+                <div className="mt-1">{getStatusIcon(log.action)}</div>
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm font-medium">
+                      {log.action.charAt(0).toUpperCase() + log.action.slice(1)}{' '}
+                      {log.entityType}
+                    </p>
+                    <time className="text-sm text-muted-foreground">
+                      {log.timestamp.toLocaleString()}
+                    </time>
+                  </div>
+                  {log.details && (
+                    <p className="text-sm text-muted-foreground">{log.details}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+            {filteredLogs.length === 0 && (
+              <div className="text-center text-muted-foreground py-8">
+                No audit logs found
+              </div>
+            )}
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }

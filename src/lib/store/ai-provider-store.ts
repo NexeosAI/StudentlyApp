@@ -1,310 +1,173 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type {
-  AIProvider,
-  AIModel,
-  ToolMapping,
-  UsageMetrics,
-  BudgetAlert,
-  AuditLogEntry
-} from '@/lib/types/ai-provider'
 
-interface AIProviderStore {
+export interface AIProvider {
+  id: string
+  name: string
+  description: string
+  status: 'active' | 'inactive' | 'error'
+  apiKey?: string
+  baseUrl?: string
+  usageQuota?: {
+    monthly: number
+    used: number
+    remaining: number
+  }
+  models: {
+    id: string
+    name: string
+    maxTokens: number
+    costPerToken: number
+  }[]
+  settings: {
+    defaultModel: string
+    temperature: number
+    maxTokens: number
+    topP: number
+    frequencyPenalty: number
+    presencePenalty: number
+  }
+  lastSync?: string
+  error?: string
+}
+
+interface AuditLogEntry {
+  id: string
+  timestamp: Date
+  action: string
+  entityType: string
+  entityId: string
+  details?: string
+}
+
+interface AIProviderState {
   providers: AIProvider[]
-  models: AIModel[]
-  toolMappings: ToolMapping[]
-  usageMetrics: UsageMetrics[]
-  budgetAlerts: BudgetAlert[]
   auditLog: AuditLogEntry[]
-  
-  // Provider Management
   addProvider: (provider: Omit<AIProvider, 'id'>) => void
   updateProvider: (id: string, updates: Partial<AIProvider>) => void
   removeProvider: (id: string) => void
-  
-  // Model Management
-  addModel: (model: Omit<AIModel, 'id'>) => void
-  updateModel: (id: string, updates: Partial<AIModel>) => void
-  removeModel: (id: string) => void
-  
-  // Tool Mapping
-  addToolMapping: (mapping: Omit<ToolMapping, 'id' | 'createdAt' | 'updatedAt'>) => void
-  updateToolMapping: (id: string, updates: Partial<ToolMapping>) => void
-  removeToolMapping: (id: string) => void
-  
-  // Usage Tracking
-  recordUsage: (usage: Omit<UsageMetrics, 'id'>) => void
-  getUsageByProvider: (providerId: string, period: 'day' | 'week' | 'month' | 'year') => UsageMetrics[]
-  getUsageByModel: (modelId: string, period: 'day' | 'week' | 'month' | 'year') => UsageMetrics[]
-  
-  // Budget Management
-  addBudgetAlert: (alert: Omit<BudgetAlert, 'id'>) => void
-  updateBudgetAlert: (id: string, updates: Partial<BudgetAlert>) => void
-  removeBudgetAlert: (id: string) => void
-  
-  // Audit Logging
-  addAuditLog: (entry: Omit<AuditLogEntry, 'id' | 'timestamp'>) => void
+  updateProviderStatus: (id: string, status: AIProvider['status'], error?: string) => void
+  updateUsageQuota: (id: string, used: number) => void
+  logAction: (action: string, entityType: string, entityId: string, details?: string) => void
 }
 
-export const useAIProviderStore = create<AIProviderStore>()(
+const useAIProviderStore = create<AIProviderState>()(
   persist(
-    (set, get) => ({
-      providers: [],
-      models: [],
-      toolMappings: [],
-      usageMetrics: [],
-      budgetAlerts: [],
+    (set) => ({
+      providers: [
+        {
+          id: 'openai',
+          name: 'OpenAI',
+          description: 'GPT-3.5 and GPT-4 models for various AI tasks',
+          status: 'active',
+          usageQuota: {
+            monthly: 100,
+            used: 0,
+            remaining: 100
+          },
+          models: [
+            {
+              id: 'gpt-4',
+              name: 'GPT-4',
+              maxTokens: 8192,
+              costPerToken: 0.00003
+            },
+            {
+              id: 'gpt-3.5-turbo',
+              name: 'GPT-3.5 Turbo',
+              maxTokens: 4096,
+              costPerToken: 0.000002
+            }
+          ],
+          settings: {
+            defaultModel: 'gpt-3.5-turbo',
+            temperature: 0.7,
+            maxTokens: 2048,
+            topP: 1,
+            frequencyPenalty: 0,
+            presencePenalty: 0
+          }
+        },
+        {
+          id: 'anthropic',
+          name: 'Anthropic',
+          description: 'Claude models for advanced reasoning and analysis',
+          status: 'inactive',
+          models: [
+            {
+              id: 'claude-2',
+              name: 'Claude 2',
+              maxTokens: 100000,
+              costPerToken: 0.000008
+            }
+          ],
+          settings: {
+            defaultModel: 'claude-2',
+            temperature: 0.7,
+            maxTokens: 4096,
+            topP: 1,
+            frequencyPenalty: 0,
+            presencePenalty: 0
+          }
+        }
+      ],
       auditLog: [],
-
-      // Provider Management
-      addProvider: (provider) => {
-        const newProvider = { ...provider, id: crypto.randomUUID() }
+      addProvider: (provider) => 
         set((state) => ({
-          providers: [...state.providers, newProvider]
-        }))
-        get().addAuditLog({
-          action: 'create',
-          entityType: 'provider',
-          entityId: newProvider.id,
-          changes: newProvider,
-          userId: 'current-user' // Replace with actual user ID
-        })
-      },
-
-      updateProvider: (id, updates) => {
+          providers: [...state.providers, { ...provider, id: crypto.randomUUID() }]
+        })),
+      updateProvider: (id, updates) =>
         set((state) => ({
           providers: state.providers.map((p) =>
             p.id === id ? { ...p, ...updates } : p
           )
-        }))
-        get().addAuditLog({
-          action: 'update',
-          entityType: 'provider',
-          entityId: id,
-          changes: updates,
-          userId: 'current-user'
-        })
-      },
-
-      removeProvider: (id) => {
+        })),
+      removeProvider: (id) =>
         set((state) => ({
           providers: state.providers.filter((p) => p.id !== id)
-        }))
-        get().addAuditLog({
-          action: 'delete',
-          entityType: 'provider',
-          entityId: id,
-          changes: {},
-          userId: 'current-user'
-        })
-      },
-
-      // Model Management
-      addModel: (model) => {
-        const newModel = { ...model, id: crypto.randomUUID() }
+        })),
+      updateProviderStatus: (id, status, error) =>
         set((state) => ({
-          models: [...state.models, newModel]
-        }))
-        get().addAuditLog({
-          action: 'create',
-          entityType: 'model',
-          entityId: newModel.id,
-          changes: newModel,
-          userId: 'current-user'
-        })
-      },
-
-      updateModel: (id, updates) => {
-        set((state) => ({
-          models: state.models.map((m) =>
-            m.id === id ? { ...m, ...updates } : m
+          providers: state.providers.map((p) =>
+            p.id === id ? { ...p, status, error, lastSync: new Date().toISOString() } : p
           )
-        }))
-        get().addAuditLog({
-          action: 'update',
-          entityType: 'model',
-          entityId: id,
-          changes: updates,
-          userId: 'current-user'
-        })
-      },
-
-      removeModel: (id) => {
+        })),
+      updateUsageQuota: (id, used) =>
         set((state) => ({
-          models: state.models.filter((m) => m.id !== id)
-        }))
-        get().addAuditLog({
-          action: 'delete',
-          entityType: 'model',
-          entityId: id,
-          changes: {},
-          userId: 'current-user'
-        })
-      },
-
-      // Tool Mapping
-      addToolMapping: (mapping) => {
-        const newMapping = {
-          ...mapping,
-          id: crypto.randomUUID(),
-          createdAt: new Date(),
-          updatedAt: new Date()
-        }
-        set((state) => ({
-          toolMappings: [...state.toolMappings, newMapping]
-        }))
-        get().addAuditLog({
-          action: 'create',
-          entityType: 'mapping',
-          entityId: newMapping.id,
-          changes: newMapping,
-          userId: 'current-user'
-        })
-      },
-
-      updateToolMapping: (id, updates) => {
-        set((state) => ({
-          toolMappings: state.toolMappings.map((m) =>
-            m.id === id ? { ...m, ...updates, updatedAt: new Date() } : m
+          providers: state.providers.map((p) =>
+            p.id === id && p.usageQuota
+              ? {
+                  ...p,
+                  usageQuota: {
+                    ...p.usageQuota,
+                    used,
+                    remaining: p.usageQuota.monthly - used
+                  }
+                }
+              : p
           )
-        }))
-        get().addAuditLog({
-          action: 'update',
-          entityType: 'mapping',
-          entityId: id,
-          changes: updates,
-          userId: 'current-user'
-        })
-      },
-
-      removeToolMapping: (id) => {
+        })),
+      logAction: (action, entityType, entityId, details) =>
         set((state) => ({
-          toolMappings: state.toolMappings.filter((m) => m.id !== id)
+          auditLog: [
+            {
+              id: crypto.randomUUID(),
+              timestamp: new Date(),
+              action,
+              entityType,
+              entityId,
+              details
+            },
+            ...state.auditLog
+          ]
         }))
-        get().addAuditLog({
-          action: 'delete',
-          entityType: 'mapping',
-          entityId: id,
-          changes: {},
-          userId: 'current-user'
-        })
-      },
-
-      // Usage Tracking
-      recordUsage: (usage) => {
-        const newUsage = { ...usage, id: crypto.randomUUID() }
-        set((state) => ({
-          usageMetrics: [...state.usageMetrics, newUsage]
-        }))
-      },
-
-      getUsageByProvider: (providerId, period) => {
-        const metrics = get().usageMetrics
-        const now = new Date()
-        const periodStart = new Date()
-
-        switch (period) {
-          case 'day':
-            periodStart.setDate(now.getDate() - 1)
-            break
-          case 'week':
-            periodStart.setDate(now.getDate() - 7)
-            break
-          case 'month':
-            periodStart.setMonth(now.getMonth() - 1)
-            break
-          case 'year':
-            periodStart.setFullYear(now.getFullYear() - 1)
-            break
-        }
-
-        return metrics.filter(
-          (m) => m.providerId === providerId && m.timestamp >= periodStart
-        )
-      },
-
-      getUsageByModel: (modelId, period) => {
-        const metrics = get().usageMetrics
-        const now = new Date()
-        const periodStart = new Date()
-
-        switch (period) {
-          case 'day':
-            periodStart.setDate(now.getDate() - 1)
-            break
-          case 'week':
-            periodStart.setDate(now.getDate() - 7)
-            break
-          case 'month':
-            periodStart.setMonth(now.getMonth() - 1)
-            break
-          case 'year':
-            periodStart.setFullYear(now.getFullYear() - 1)
-            break
-        }
-
-        return metrics.filter(
-          (m) => m.modelId === modelId && m.timestamp >= periodStart
-        )
-      },
-
-      // Budget Management
-      addBudgetAlert: (alert) => {
-        const newAlert = { ...alert, id: crypto.randomUUID() }
-        set((state) => ({
-          budgetAlerts: [...state.budgetAlerts, newAlert]
-        }))
-        get().addAuditLog({
-          action: 'create',
-          entityType: 'budget',
-          entityId: newAlert.id,
-          changes: newAlert,
-          userId: 'current-user'
-        })
-      },
-
-      updateBudgetAlert: (id, updates) => {
-        set((state) => ({
-          budgetAlerts: state.budgetAlerts.map((a) =>
-            a.id === id ? { ...a, ...updates } : a
-          )
-        }))
-        get().addAuditLog({
-          action: 'update',
-          entityType: 'budget',
-          entityId: id,
-          changes: updates,
-          userId: 'current-user'
-        })
-      },
-
-      removeBudgetAlert: (id) => {
-        set((state) => ({
-          budgetAlerts: state.budgetAlerts.filter((a) => a.id !== id)
-        }))
-        get().addAuditLog({
-          action: 'delete',
-          entityType: 'budget',
-          entityId: id,
-          changes: {},
-          userId: 'current-user'
-        })
-      },
-
-      // Audit Logging
-      addAuditLog: (entry) => {
-        const newEntry = {
-          ...entry,
-          id: crypto.randomUUID(),
-          timestamp: new Date()
-        }
-        set((state) => ({
-          auditLog: [...state.auditLog, newEntry]
-        }))
-      }
     }),
     {
-      name: 'ai-provider-store'
+      name: 'ai-provider-storage'
     }
   )
 )
+
+// Export both names for compatibility
+export { useAIProviderStore }
+export const useAIProvider = useAIProviderStore
